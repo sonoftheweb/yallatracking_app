@@ -1,0 +1,147 @@
+<?php $__env->startSection('content'); ?>
+
+  <div class="page-content row">
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="page-title">
+        <h3> <?php echo e($pageTitle); ?> <small><?php echo e($pageNote); ?></small></h3>
+      </div>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo e(URL::to('dashboard')); ?>"><?php echo e(Lang::get('core.home')); ?></a></li>
+		<li><a href="<?php echo e(URL::to('customers?return='.$return)); ?>"><?php echo e($pageTitle); ?></a></li>
+        <li class="active"><?php echo e(Lang::get('core.addedit')); ?> </li>
+      </ul>
+	  	  
+    </div>
+ 
+ 	<div class="page-content-wrapper">
+
+		<ul class="parsley-error-list">
+			<?php foreach($errors->all() as $error): ?>
+				<li><?php echo e($error); ?></li>
+			<?php endforeach; ?>
+		</ul>
+<div class="sbox animated fadeInRight">
+	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
+	<div class="sbox-content"> 	
+
+		 <?php echo Form::open(array('url'=>'customers/save?return='.$return, 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')); ?>
+
+<div class="col-md-6">
+						<fieldset><legend> customers</legend>
+									
+								  <div class="form-group hidethis " style="display:none;"> 
+									<label for="Customer Id" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Customer Id', (isset($fields['customer_id']['language'])? $fields['customer_id']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('customer_id', $row['customer_id'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="User Id" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('User Id', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <select name='user_id' rows='5' id='user_id' class='select2 ' required  ></select> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Customer Alternate Email" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Customer Alternate Email', (isset($fields['customer_alternate_email']['language'])? $fields['customer_alternate_email']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('customer_alternate_email', $row['customer_alternate_email'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> </fieldset>
+			</div>
+			
+			<div class="col-md-6">
+						<fieldset><legend> customers_2</legend>
+									
+								  <div class="form-group  " > 
+									<label for="Customer Address" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Customer Address', (isset($fields['customer_address']['language'])? $fields['customer_address']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <textarea name='customer_address' rows='5' id='customer_address' class='form-control '  
+				         required  ><?php echo e($row['customer_address']); ?></textarea> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Customer Phone" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Customer Phone', (isset($fields['customer_phone']['language'])? $fields['customer_phone']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('customer_phone', $row['customer_phone'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Customer Alternate Phone" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Customer Alternate Phone', (isset($fields['customer_phone_2']['language'])? $fields['customer_phone_2']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('customer_phone_2', $row['customer_phone_2'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> </fieldset>
+			</div>
+			
+			
+
+		
+			<div style="clear:both"></div>	
+				
+					
+				  <div class="form-group">
+					<label class="col-sm-4 text-right">&nbsp;</label>
+					<div class="col-sm-8">	
+					<button type="submit" name="apply" class="btn btn-info btn-sm" ><i class="fa  fa-check-circle"></i> <?php echo e(Lang::get('core.sb_apply')); ?></button>
+					<button type="submit" name="submit" class="btn btn-primary btn-sm" ><i class="fa  fa-save "></i> <?php echo e(Lang::get('core.sb_save')); ?></button>
+					<button type="button" onclick="location.href='<?php echo e(URL::to('customers?return='.$return)); ?>' " class="btn btn-success btn-sm "><i class="fa  fa-arrow-circle-left "></i>  <?php echo e(Lang::get('core.sb_cancel')); ?> </button>
+					</div>	  
+			
+				  </div> 
+		 
+		 <?php echo Form::close(); ?>
+
+	</div>
+</div>		 
+</div>	
+</div>			 
+   <script type="text/javascript">
+	$(document).ready(function() { 
+		
+		
+		$("#user_id").jCombo("<?php echo e(URL::to('customers/comboselect?filter=tb_users:id:username|first_name|last_name')); ?>",
+		{  selected_value : '<?php echo e($row["user_id"]); ?>' });
+		 
+
+		$('.removeCurrentFiles').on('click',function(){
+			var removeUrl = $(this).attr('href');
+			$.get(removeUrl,function(response){});
+			$(this).parent('div').empty();	
+			return false;
+		});		
+		
+	});
+	</script>		 
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
