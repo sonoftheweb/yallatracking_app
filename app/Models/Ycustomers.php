@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ycustomers extends Sximo  {
 	
-	protected $table = 'tb_customer';
-	protected $primaryKey = 'customer_id';
+	protected $table = 'tb_customers';
+	protected $primaryKey = 'id';
 
 	public function __construct() {
 		parent::__construct();
@@ -15,12 +15,12 @@ class ycustomers extends Sximo  {
 
 	public static function querySelect(  ){
 		
-		return "  SELECT tb_customer.* FROM tb_customer  ";
+		return "  SELECT tb_customers.* FROM tb_customers  ";
 	}	
 
 	public static function queryWhere(  ){
 		
-		return "  WHERE tb_customer.customer_id IS NOT NULL ";
+		return "  WHERE tb_customers.id IS NOT NULL ";
 	}
 	
 	public static function queryGroup(){

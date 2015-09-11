@@ -33,73 +33,137 @@
 	
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Id', (isset($fields['customer_id']['language'])? $fields['customer_id']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Id', (isset($fields['id']['language'])? $fields['id']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_id }} </td>
+						<td>{{ $row->id }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('User Id', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Group Id', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->user_id }} </td>
+						<td>{{ $row->group_id }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Address', (isset($fields['customer_address']['language'])? $fields['customer_address']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Username', (isset($fields['username']['language'])? $fields['username']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_address }} </td>
+						<td>{{ $row->username }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Phone', (isset($fields['customer_phone']['language'])? $fields['customer_phone']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Password', (isset($fields['password']['language'])? $fields['password']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_phone }} </td>
+						<td>{{ $row->password }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Phone 2', (isset($fields['customer_phone_2']['language'])? $fields['customer_phone_2']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Email', (isset($fields['email']['language'])? $fields['email']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_phone_2 }} </td>
+						<td>{{ $row->email }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Alternate Email', (isset($fields['customer_alternate_email']['language'])? $fields['customer_alternate_email']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('First Name', (isset($fields['first_name']['language'])? $fields['first_name']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_alternate_email }} </td>
+						<td>{{ $row->first_name }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Company', (isset($fields['customer_company']['language'])? $fields['customer_company']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Last Name', (isset($fields['last_name']['language'])? $fields['last_name']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_company }} </td>
+						<td>{{ $row->last_name }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Account Type', (isset($fields['customer_account_type']['language'])? $fields['customer_account_type']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Address', (isset($fields['address']['language'])? $fields['address']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->customer_account_type }} </td>
+						<td>{{ $row->address }} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('City', (isset($fields['city']['language'])? $fields['city']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->entry_by }} </td>
+						<td>{{ $row->city }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('State', (isset($fields['state']['language'])? $fields['state']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->state }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Country', (isset($fields['country']['language'])? $fields['country']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->country }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Phone', (isset($fields['phone']['language'])? $fields['phone']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->phone }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Phone 2', (isset($fields['phone_2']['language'])? $fields['phone_2']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->phone_2 }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Alternate Email', (isset($fields['alternate_email']['language'])? $fields['alternate_email']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->alternate_email }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Company', (isset($fields['company']['language'])? $fields['company']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->company }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Created At', (isset($fields['created_at']['language'])? $fields['created_at']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->created_at }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->updated_at }} </td>
 						
 					</tr>
 				

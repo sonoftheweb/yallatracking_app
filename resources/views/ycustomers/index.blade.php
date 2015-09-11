@@ -97,7 +97,7 @@
             @foreach ($rowData as $row)
                 <tr>
 					<td width="30"> {{ ++$i }} </td>
-					<td width="50"><input type="checkbox" class="ids" name="id[]" value="{{ $row->customer_id }}" />  </td>									
+					<td width="50"><input type="checkbox" class="ids" name="id[]" value="{{ $row->id }}" />  </td>									
 				 @foreach ($tableGrid as $field)
 					 @if($field['view'] =='1')
 					 <td>					 
@@ -112,10 +112,10 @@
 				 @endforeach
 				 <td>
 					 	@if($access['is_detail'] ==1)
-						<a href="{{ URL::to('ycustomers/show/'.$row->customer_id.'?return='.$return)}}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
+						<a href="{{ URL::to('ycustomers/show/'.$row->id.'?return='.$return)}}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
 						@endif
 						@if($access['is_edit'] ==1)
-						<a  href="{{ URL::to('ycustomers/update/'.$row->customer_id.'?return='.$return) }}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_edit') }}"><i class="fa fa-edit "></i></a>
+						<a  href="{{ URL::to('ycustomers/update/'.$row->id.'?return='.$return) }}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_edit') }}"><i class="fa fa-edit "></i></a>
 						@endif
 												
 					

@@ -96,7 +96,7 @@
             <?php foreach($rowData as $row): ?>
                 <tr>
 					<td width="30"> <?php echo e(++$i); ?> </td>
-					<td width="50"><input type="checkbox" class="ids" name="id[]" value="<?php echo e($row->customer_id); ?>" />  </td>									
+					<td width="50"><input type="checkbox" class="ids" name="id[]" value="<?php echo e($row->id); ?>" />  </td>									
 				 <?php foreach($tableGrid as $field): ?>
 					 <?php if($field['view'] =='1'): ?>
 					 <td>					 
@@ -112,10 +112,10 @@
 				 <?php endforeach; ?>
 				 <td>
 					 	<?php if($access['is_detail'] ==1): ?>
-						<a href="<?php echo e(URL::to('ycustomers/show/'.$row->customer_id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_view')); ?>"><i class="fa  fa-search "></i></a>
+						<a href="<?php echo e(URL::to('ycustomers/show/'.$row->id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_view')); ?>"><i class="fa  fa-search "></i></a>
 						<?php endif; ?>
 						<?php if($access['is_edit'] ==1): ?>
-						<a  href="<?php echo e(URL::to('ycustomers/update/'.$row->customer_id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_edit')); ?>"><i class="fa fa-edit "></i></a>
+						<a  href="<?php echo e(URL::to('ycustomers/update/'.$row->id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_edit')); ?>"><i class="fa fa-edit "></i></a>
 						<?php endif; ?>
 												
 					

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\controller;
 use App\Models\Ycustomers;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Validator, Input, Redirect ; 
@@ -40,7 +41,7 @@ class YcustomersController extends Controller {
 			return Redirect::to('dashboard')
 				->with('messagetext', \Lang::get('core.note_restric'))->with('msgstatus','error');
 
-		$sort = (!is_null($request->input('sort')) ? $request->input('sort') : 'customer_id'); 
+		$sort = (!is_null($request->input('sort')) ? $request->input('sort') : 'id'); 
 		$order = (!is_null($request->input('order')) ? $request->input('order') : 'asc');
 		// End Filter sort and order for query 
 		// Filter Search for query		
@@ -107,7 +108,7 @@ class YcustomersController extends Controller {
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_customer'); 
+			$this->data['row'] = $this->model->getColumnTable('tb_customers'); 
 		}
 		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 
@@ -128,7 +129,7 @@ class YcustomersController extends Controller {
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_customer'); 
+			$this->data['row'] = $this->model->getColumnTable('tb_customers'); 
 		}
 		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 		
@@ -145,7 +146,7 @@ class YcustomersController extends Controller {
 		if ($validator->passes()) {
 			$data = $this->validatePost('tb_ycustomers');
 			
-			$id = $this->model->insertRow($data , $request->input('customer_id'));
+			$id = $this->model->insertRow($data , $request->input('id'));
 			
 			if(!is_null($request->input('apply')))
 			{
@@ -155,7 +156,7 @@ class YcustomersController extends Controller {
 			}
 
 			// Insert logs into database
-			if($request->input('customer_id') =='')
+			if($request->input('id') =='')
 			{
 				\SiteHelpers::auditTrail( $request , 'New Data with ID '.$id.' Has been Inserted !');
 			} else {

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Models\ycustomers;
 use Socialize;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
@@ -53,7 +52,6 @@ class UserController extends Controller {
 			$code = rand(10000,10000000);
 			
 			$authen = new User;
-			$cust = new ycustomers;
 			$authen->first_name = $request->input('firstname');
 			$authen->last_name = $request->input('lastname');
 			$authen->email = trim($request->input('email'));
@@ -62,8 +60,6 @@ class UserController extends Controller {
 			$authen->password = \Hash::make($request->input('password'));
 			if(CNF_ACTIVATION == 'auto') { $authen->active = '1'; } else { $authen->active = '0'; }
 			$authen->save();
-			$cust->user_id = $authen->id;
-			$cust->customer_address = '';
 			
 			$data = array(
 				'firstname'	=> $request->input('firstname') ,
