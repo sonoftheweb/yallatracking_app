@@ -26,6 +26,14 @@ class ycustomers extends Sximo  {
 	public static function queryGroup(){
 		return "  ";
 	}
+
+	public function insertNewCustomer($data){
+		$table = 'tb_customers';
+		if(isset($data['createdOn'])) $data['createdOn'] = date("Y-m-d H:i:s");
+		if(isset($data['updatedOn'])) $data['updatedOn'] = date("Y-m-d H:i:s");
+		$id = \DB::table($table)->insertGetId($data);
+		return $id;
+	}
 	
 
 }

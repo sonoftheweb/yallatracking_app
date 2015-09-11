@@ -144,9 +144,31 @@ class YcustomersController extends Controller {
 		$rules = $this->validateForm();
 		$validator = Validator::make($request->all(), $rules);	
 		if ($validator->passes()) {
-			$data = $this->validatePost('tb_ycustomers');
-			
-			$id = $this->model->insertRow($data , $request->input('id'));
+			if($request->input('id') == ''){
+				$data = $request->all();
+				unset($data['_token']);
+				unset($data['submit']);
+				unset($data['return']);
+				//dd($data);
+				$id = $this->model->insertNewCustomer($data);
+			}
+			else {
+				$data = $this->validatePost('tb_ycustomers');
+				$id = $this->model->insertRow($data, $request->input('id'));
+			}
+
+			//now we insert new user data here
+			$code = rand(10000,10000000);
+			$authen = new User;
+			$authen->first_name = $request->input('first_name');
+			$authen->last_name = $request->input('last_name');
+			$authen->username = $request->input('username');
+			$authen->email = trim($request->input('email'));
+			$authen->activation = $code;
+			$authen->group_id = 3;
+			$authen->password = \Hash::make($request->input('password'));
+			if(CNF_ACTIVATION == 'auto') { $authen->active = '1'; } else { $authen->active = '0'; }
+			$authen->save();
 			
 			if(!is_null($request->input('apply')))
 			{

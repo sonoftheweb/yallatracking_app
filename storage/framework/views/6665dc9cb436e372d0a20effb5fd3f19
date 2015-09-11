@@ -28,92 +28,169 @@
 		 <?php echo Form::open(array('url'=>'ycustomers/save?return='.$return, 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')); ?>
 
 <div class="col-md-12">
-						<fieldset><legend> Customers</legend>
+						<fieldset><legend> Yalla Customers</legend>
 									
 								  <div class="form-group  " > 
-									<label for="Customer Id" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Id', (isset($fields['customer_id']['language'])? $fields['customer_id']['language'] : array())); ?>	
+									<label for="Id" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Id', (isset($fields['id']['language'])? $fields['id']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('customer_id', $row['customer_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <?php echo Form::text('id', $row['id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="User Id" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('User Id', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())); ?>	
+									<label for="Group Id" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Group Id', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('user_id', $row['user_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <?php echo Form::text('group_id', $row['group_id'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Customer Address" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Address', (isset($fields['customer_address']['language'])? $fields['customer_address']['language'] : array())); ?>	
+									<label for="Username" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Username', (isset($fields['username']['language'])? $fields['username']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <textarea name='customer_address' rows='5' id='customer_address' class='form-control '  
-				           ><?php echo e($row['customer_address']); ?></textarea> 
+									  <?php echo Form::text('username', $row['username'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Customer Phone" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Phone', (isset($fields['customer_phone']['language'])? $fields['customer_phone']['language'] : array())); ?>	
+									<label for="Password" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Password', (isset($fields['password']['language'])? $fields['password']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('customer_phone', $row['customer_phone'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <?php echo Form::text('password', $row['password'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Customer Phone 2" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Phone 2', (isset($fields['customer_phone_2']['language'])? $fields['customer_phone_2']['language'] : array())); ?>	
+									<label for="Email" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Email', (isset($fields['email']['language'])? $fields['email']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('customer_phone_2', $row['customer_phone_2'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <?php echo Form::text('email', $row['email'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Customer Alternate Email" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Alternate Email', (isset($fields['customer_alternate_email']['language'])? $fields['customer_alternate_email']['language'] : array())); ?>	
+									<label for="First Name" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('First Name', (isset($fields['first_name']['language'])? $fields['first_name']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('customer_alternate_email', $row['customer_alternate_email'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <?php echo Form::text('first_name', $row['first_name'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Customer Company" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Company', (isset($fields['customer_company']['language'])? $fields['customer_company']['language'] : array())); ?>	
+									<label for="Last Name" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Last Name', (isset($fields['last_name']['language'])? $fields['last_name']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('customer_company', $row['customer_company'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <?php echo Form::text('last_name', $row['last_name'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Customer Account Type" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Customer Account Type', (isset($fields['customer_account_type']['language'])? $fields['customer_account_type']['language'] : array())); ?>	
+									<label for="Address" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Address', (isset($fields['address']['language'])? $fields['address']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('customer_account_type', $row['customer_account_type'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									  <textarea name='address' rows='5' id='address' class='form-control '  
+				           ><?php echo e($row['address']); ?></textarea> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="City" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('City', (isset($fields['city']['language'])? $fields['city']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('city', $row['city'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="State" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('State', (isset($fields['state']['language'])? $fields['state']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('state', $row['state'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Country" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Country', (isset($fields['country']['language'])? $fields['country']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('country', $row['country'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Phone" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Phone', (isset($fields['phone']['language'])? $fields['phone']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('phone', $row['phone'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Phone 2" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Phone 2', (isset($fields['phone_2']['language'])? $fields['phone_2']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('phone_2', $row['phone_2'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Alternate Email" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Alternate Email', (isset($fields['alternate_email']['language'])? $fields['alternate_email']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('alternate_email', $row['alternate_email'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Company" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('Company', (isset($fields['company']['language'])? $fields['company']['language'] : array())); ?>	
+									</label>
+									<div class="col-md-6">
+									  <?php echo Form::text('company', $row['company'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -124,8 +201,13 @@
 									<?php echo SiteHelpers::activeLang('Created At', (isset($fields['created_at']['language'])? $fields['created_at']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <textarea name='created_at' rows='5' id='created_at' class='form-control '  
-				           ><?php echo e($row['created_at']); ?></textarea> 
+									  
+				<div class="input-group m-b" style="width:150px !important;">
+					<?php echo Form::text('created_at', $row['created_at'],array('class'=>'form-control datetime', 'style'=>'width:150px !important;')); ?>
+
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				</div>
+				 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -136,8 +218,13 @@
 									<?php echo SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <textarea name='updated_at' rows='5' id='updated_at' class='form-control '  
-				           ><?php echo e($row['updated_at']); ?></textarea> 
+									  
+				<div class="input-group m-b" style="width:150px !important;">
+					<?php echo Form::text('updated_at', $row['updated_at'],array('class'=>'form-control datetime', 'style'=>'width:150px !important;')); ?>
+
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				</div>
+				 
 									 </div> 
 									 <div class="col-md-2">
 									 	
