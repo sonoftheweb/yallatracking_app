@@ -145,11 +145,28 @@ class YcustomersController extends Controller {
 		$validator = Validator::make($request->all(), $rules);
 		if ($validator->passes()) {
 			if($request->input('id') == ''){
+
+				//now we insert new user data here
+				$code = rand(10000,10000000);
+				$authen = new User;
+				$authen->first_name = $request->input('first_name');
+				$authen->last_name = $request->input('last_name');
+				$authen->username = $request->input('username');
+				$authen->email = trim($request->input('email'));
+				$authen->activation = $code;
+				$authen->group_id = 4;
+				$authen->password = \Hash::make($request->input('password'));
+				if(CNF_ACTIVATION == 'auto') { $authen->active = '1'; } else { $authen->active = '0'; }
+				$authen->save();
+				$userid = $authen->id;
+
 				$data = $request->all();
 				unset($data['_token']);
 				unset($data['submit']);
 				unset($data['return']);
-				//dd($data);
+				//unset($data['password']);
+				$data['password'] = 'SET';
+				$data['user_id'] = $userid;
 				$id = $this->model->insertNewCustomer($data);
 			}
 			else {
@@ -157,18 +174,8 @@ class YcustomersController extends Controller {
 				$id = $this->model->insertRow($data, $request->input('id'));
 			}
 
-			//now we insert new user data here
-			$code = rand(10000,10000000);
-			$authen = new User;
-			$authen->first_name = $request->input('first_name');
-			$authen->last_name = $request->input('last_name');
-			$authen->username = $request->input('username');
-			$authen->email = trim($request->input('email'));
-			$authen->activation = $code;
-			$authen->group_id = 3;
-			$authen->password = \Hash::make($request->input('password'));
-			if(CNF_ACTIVATION == 'auto') { $authen->active = '1'; } else { $authen->active = '0'; }
-			$authen->save();
+
+
 
 			if(!is_null($request->input('apply')))
 			{
@@ -206,7 +213,8 @@ class YcustomersController extends Controller {
 		{
 			$this->model->destroy($request->input('id'));
 
-			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successfull");
+
+			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successful");
 			// redirect
 			return Redirect::to('ycustomers')
 				->with('messagetext', \Lang::get('core.note_success_delete'))->with('msgstatus','success');

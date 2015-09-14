@@ -1466,6 +1466,12 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 		\DB::table( 'tb_logs')->insert($data);		
 
 	}
+
+	public static function getCustomerIdFromUserId(){
+		$uid = Session::get('uid');
+		$uid = DB::table('tb_customers')->where('user_id', $uid)->pluck('id');
+		return $uid;
+	}
 	 	 		
 			
 }

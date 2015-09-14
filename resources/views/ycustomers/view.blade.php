@@ -33,7 +33,7 @@
 	
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Id', (isset($fields['id']['language'])? $fields['id']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('CID', (isset($fields['id']['language'])? $fields['id']['language'] : array())) }}	
 						</td>
 						<td>{{ $row->id }} </td>
 						
@@ -41,25 +41,9 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Group Id', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('UID', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->group_id }} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Username', (isset($fields['username']['language'])? $fields['username']['language'] : array())) }}	
-						</td>
-						<td>{{ $row->username }} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Password', (isset($fields['password']['language'])? $fields['password']['language'] : array())) }}	
-						</td>
-						<td>{{ $row->password }} </td>
+						<td>{{ $row->user_id }} </td>
 						
 					</tr>
 				
@@ -99,7 +83,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('City', (isset($fields['city']['language'])? $fields['city']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->city }} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->city,'city','1:tb_cities:city_code:city_name') !!} </td>
 						
 					</tr>
 				
@@ -107,7 +91,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('State', (isset($fields['state']['language'])? $fields['state']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->state }} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->state,'state','1:tb_states:id:state_name|state_code') !!} </td>
 						
 					</tr>
 				

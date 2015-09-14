@@ -31,7 +31,8 @@
 			 <li <?php if(Request::segment(1) == $menu['module']): ?> class="active" <?php endif; ?>>
 			 	<a 
 					<?php if($menu['menu_type'] =='external'): ?>
-						href="<?php echo e($menu['url']); ?>" 
+						<?php /*href="<?php echo e($menu['url']); ?>"*/ ?>
+						href="<?=str_replace('{id}', SiteHelpers::getCustomerIdFromUserId(), $menu['url'])?>"
 					<?php else: ?>
 						href="<?php echo e(URL::to($menu['module'])); ?>" 
 					<?php endif; ?>				
@@ -55,7 +56,8 @@
 						 <li <?php if(Request::segment(1) == $menu2['module']): ?> class="active" <?php endif; ?>>
 						 	<a 
 								<?php if($menu2['menu_type'] =='external'): ?>
-									href="<?php echo e($menu2['url']); ?>" 
+									<?php /*href="<?php echo e($menu2['url']); ?>" */ ?>
+									href="<?=str_replace('{id}', SiteHelpers::getCustomerIdFromUserId(), $menu2['url'])?>"
 								<?php else: ?>
 									href="<?php echo e(URL::to($menu2['module'])); ?>"  
 								<?php endif; ?>									
@@ -103,5 +105,5 @@
 		<?php endforeach; ?>
       </ul>
 	</div>
-</nav>	  
+</nav>
 	  

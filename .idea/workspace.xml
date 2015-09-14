@@ -2,54 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb660154-d7cc-4bd1-8eeb-3513f7468c3d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/0bb4214146e76bafc22880cddda7c208" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/1f6ab549e83d1916a790085c8d89158b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/29e42d94ad228190b87257a2ae8cdc88" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/367af2a2645a47c61bfcb734e1a6e578" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/36d946d3c52ffb17a01d633f350d6072" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/5e6c38fe450558b15d5e27e5c958f83e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/6860fefc499742d2f73dbe207bd61307" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/6a5c470acb45000756214628185c1250" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/7f8741c9dc08a91ddedadaf7a753652b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/84a70ecfb1b7aed436b8735386f61754" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/8b9ad2bb3236386bd339a42c3a7f3094" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/acebbb246b4c75e2805c0ef8935f9649" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/ad43cc2505538ce7eb65d14b06cb835d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/b51c5c632d2c0949906ec740ce282eed" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/d696380c8e65eec83fb9c9f0c9d35da3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/e343e1bd4751d88c5e84e4c231ce76f6" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/022d6b849c3dcb6de79d2028563674f9" afterPath="$PROJECT_DIR$/storage/framework/views/022d6b849c3dcb6de79d2028563674f9" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/024863a2f6bdc6dac194e5bdd9cd0334" afterPath="$PROJECT_DIR$/storage/framework/views/024863a2f6bdc6dac194e5bdd9cd0334" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/081d52d55d4314b26bc25410a8dd0a14" afterPath="$PROJECT_DIR$/storage/framework/views/081d52d55d4314b26bc25410a8dd0a14" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/15238ac75bbf1f704ed5e484b7f548ee" afterPath="$PROJECT_DIR$/storage/framework/views/15238ac75bbf1f704ed5e484b7f548ee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/15d70f4f30093d54119e65128aa614f0" afterPath="$PROJECT_DIR$/storage/framework/views/15d70f4f30093d54119e65128aa614f0" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/2840ebda2e159f8c54ce53cf622c6e15" afterPath="$PROJECT_DIR$/storage/framework/views/2840ebda2e159f8c54ce53cf622c6e15" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/2d425dbf1cdac9c9075ba39871041a0e" afterPath="$PROJECT_DIR$/storage/framework/views/2d425dbf1cdac9c9075ba39871041a0e" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/30be80d32a4d29143ce02acfce743651" afterPath="$PROJECT_DIR$/storage/framework/views/30be80d32a4d29143ce02acfce743651" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/36d946d3c52ffb17a01d633f350d6072" afterPath="$PROJECT_DIR$/storage/framework/views/36d946d3c52ffb17a01d633f350d6072" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/4f3a42514af60ce6f6cdd91a76738ee9" afterPath="$PROJECT_DIR$/storage/framework/views/4f3a42514af60ce6f6cdd91a76738ee9" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/51a7f0bf7581995c37c827e25ce6b3ca" afterPath="$PROJECT_DIR$/storage/framework/views/51a7f0bf7581995c37c827e25ce6b3ca" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/59e518b79e46816fd0fe8a06218005d1" afterPath="$PROJECT_DIR$/storage/framework/views/59e518b79e46816fd0fe8a06218005d1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/65b36dedb4ff58145df960ca2c62f159" afterPath="$PROJECT_DIR$/storage/framework/views/65b36dedb4ff58145df960ca2c62f159" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/6665dc9cb436e372d0a20effb5fd3f19" afterPath="$PROJECT_DIR$/storage/framework/views/6665dc9cb436e372d0a20effb5fd3f19" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/724bb5d161e345e46f2c748f2c560e87" afterPath="$PROJECT_DIR$/storage/framework/views/724bb5d161e345e46f2c748f2c560e87" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/8b17efd653713ed0d2fdd81fdf517033" afterPath="$PROJECT_DIR$/storage/framework/views/8b17efd653713ed0d2fdd81fdf517033" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/8b9ad2bb3236386bd339a42c3a7f3094" afterPath="$PROJECT_DIR$/storage/framework/views/8b9ad2bb3236386bd339a42c3a7f3094" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/978c03f265f8acfb5ad3d83eaff02b9a" afterPath="$PROJECT_DIR$/storage/framework/views/978c03f265f8acfb5ad3d83eaff02b9a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Ycustomers.php" afterPath="$PROJECT_DIR$/app/Models/Ycustomers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Cities.php" afterPath="$PROJECT_DIR$/app/Models/Cities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CitiesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CitiesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Sximo/MenuController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Sximo/MenuController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Library/SiteHelpers.php" afterPath="$PROJECT_DIR$/app/Library/SiteHelpers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/States.php" afterPath="$PROJECT_DIR$/app/Models/States.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/a0b63ebfb3a9e347ba8c74df7a858682" afterPath="$PROJECT_DIR$/storage/framework/views/a0b63ebfb3a9e347ba8c74df7a858682" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/a263fbbaf75b81465f7f306d579e0e8a" afterPath="$PROJECT_DIR$/storage/framework/views/a263fbbaf75b81465f7f306d579e0e8a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/af250ff5efc52f0be00d95c56ecd67a0" afterPath="$PROJECT_DIR$/storage/framework/views/af250ff5efc52f0be00d95c56ecd67a0" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b16f7f43c82afc09dd55099bee53f983" afterPath="$PROJECT_DIR$/storage/framework/views/b16f7f43c82afc09dd55099bee53f983" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b256949e078643982985fb86b7d8bd85" afterPath="$PROJECT_DIR$/storage/framework/views/b256949e078643982985fb86b7d8bd85" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b3b38eccc2c2144d2e6fa969375a62c2" afterPath="$PROJECT_DIR$/storage/framework/views/b3b38eccc2c2144d2e6fa969375a62c2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b572ac018656ea3a8da4c54693c9ad26" afterPath="$PROJECT_DIR$/storage/framework/views/b572ac018656ea3a8da4c54693c9ad26" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b95111b6fb111ef59308b0293f9c27dc" afterPath="$PROJECT_DIR$/storage/framework/views/b95111b6fb111ef59308b0293f9c27dc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/c0581ebb59f0db60b573f67c7f9aa55e" afterPath="$PROJECT_DIR$/storage/framework/views/c0581ebb59f0db60b573f67c7f9aa55e" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/c59ebf4a5697fbf361c80564386524b8" afterPath="$PROJECT_DIR$/storage/framework/views/c59ebf4a5697fbf361c80564386524b8" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d1da6f0d938b9ee9a10dffd522695f8b" afterPath="$PROJECT_DIR$/storage/framework/views/d1da6f0d938b9ee9a10dffd522695f8b" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d696380c8e65eec83fb9c9f0c9d35da3" afterPath="$PROJECT_DIR$/storage/framework/views/d696380c8e65eec83fb9c9f0c9d35da3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/db7b499edf891ef86c56e8b0f9a01754" afterPath="$PROJECT_DIR$/storage/framework/views/db7b499edf891ef86c56e8b0f9a01754" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/dd7b1de7a967490502b7e194c6143748" afterPath="$PROJECT_DIR$/storage/framework/views/dd7b1de7a967490502b7e194c6143748" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/e5e6075ec7e5b3104cbdde9d79f30b4d" afterPath="$PROJECT_DIR$/storage/framework/views/e5e6075ec7e5b3104cbdde9d79f30b4d" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/e80f5b09c6c8ca7ad3bb40729f65c7ad" afterPath="$PROJECT_DIR$/storage/framework/views/e80f5b09c6c8ca7ad3bb40729f65c7ad" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/ec113bbbe4fc1be9f78612259ef7ccb1" afterPath="$PROJECT_DIR$/storage/framework/views/ec113bbbe4fc1be9f78612259ef7ccb1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/efb3ed9f5e1c2b6219eb42f656eb5ec6" afterPath="$PROJECT_DIR$/storage/framework/views/efb3ed9f5e1c2b6219eb42f656eb5ec6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f0237af95e2a2a58624fbb759352181c" afterPath="$PROJECT_DIR$/storage/framework/views/f0237af95e2a2a58624fbb759352181c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f320314cc33a8b626360bf350785fbca" afterPath="$PROJECT_DIR$/storage/framework/views/f320314cc33a8b626360bf350785fbca" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/fb04040ed1b82bf4f15ac7504454c5d5" afterPath="$PROJECT_DIR$/storage/framework/views/fb04040ed1b82bf4f15ac7504454c5d5" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/ffdefaad03c5f6ecf11fe43e20617a14" afterPath="$PROJECT_DIR$/storage/framework/views/ffdefaad03c5f6ecf11fe43e20617a14" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cities/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/cities/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/states/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/states/form.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ycustomers/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/ycustomers/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/elliot/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/elliot/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cities/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cities/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/states/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/states/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/moduleroutes.php" afterPath="$PROJECT_DIR$/app/Http/moduleroutes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sximo/themes/elliot/css/style.css" afterPath="$PROJECT_DIR$/public/sximo/themes/elliot/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sximo/css/sximo-dark-blue.css" afterPath="$PROJECT_DIR$/public/sximo/css/sximo-dark-blue.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sximo/css/sximo-light-blue.css" afterPath="$PROJECT_DIR$/public/sximo/css/sximo-light-blue.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sximo/css/sximo.css" afterPath="$PROJECT_DIR$/public/sximo/css/sximo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sximo/themes/sximone/css/sximone.css" afterPath="$PROJECT_DIR$/public/sximo/themes/sximone/css/sximone.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/sidemenu.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/sidemenu.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cities/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/cities/table.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/states/table.blade.php" afterPath="$PROJECT_DIR$/resources/views/states/table.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cities/toolbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/cities/toolbar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/states/toolbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/states/toolbar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cities/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/cities/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/states/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/states/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ycustomers/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/ycustomers/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yallatracking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,8 +89,8 @@
       <file leaf-file-name="YcustomersController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+            <state vertical-scroll-proportion="-5.3333335">
+              <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
               <folding>
                 <element signature="e#39#75#0#PHP" expanded="true" />
               </folding>
@@ -83,13 +98,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ycustomers.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Models/Ycustomers.php">
+      <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/ycustomers/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1923077">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.703704">
+              <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidemenu.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidemenu.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6666665">
+              <caret line="56" column="111" selection-start-line="56" selection-start-column="111" selection-end-line="56" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customereditmodel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Models/Customereditmodel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.66442955">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
               <folding>
-                <marker date="1441943805857" expanded="true" signature="327:366" placeholder="SELECT tb_cu..tb_customers..." />
+                <marker date="1442244399065" expanded="true" signature="379:418" placeholder="SELECT tb_cu..tb_customers..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SiteHelpers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Library/SiteHelpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.203704">
+              <caret line="1470" column="32" selection-start-line="1470" selection-start-column="29" selection-end-line="1470" selection-end-column="32" />
+              <folding>
+                <element signature="n#menus#0;n#SiteHelpers#0;n#!!top" expanded="false" />
+                <element signature="n#nestedMenu#0;n#SiteHelpers#0;n#!!top" expanded="false" />
+                <marker date="1442241945401" expanded="true" signature="3114:3267" placeholder="SELECT tb_me..tb_menu..." />
+                <marker date="1442241945401" expanded="true" signature="12277:12353" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="12552:12620" placeholder="..." />
+                <marker date="1442241945401" expanded="false" signature="12723:12746" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="12748:12929" placeholder="..." />
+                <marker date="1442241945401" expanded="false" signature="13028:13051" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="13053:13354" placeholder="..." />
+                <marker date="1442241945401" expanded="false" signature="13517:13540" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="13542:13763" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="17018:17128" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="17460:17551" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="18096:18215" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="21348:21623" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="21401:21580" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="24335:24414" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="27270:27349" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="30324:30457" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="30569:30705" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="30817:30944" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="31032:31156" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="32940:33125" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="33016:33121" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="39383:39396" placeholder="..." />
+                <marker date="1442241945401" expanded="true" signature="39431:39439" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -98,6 +170,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Jacob Ekanem" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -112,9 +189,13 @@
         <option value="$PROJECT_DIR$/public/sximo/css/sximo-dark-blue.css" />
         <option value="$PROJECT_DIR$/public/sximo/css/sximo.css" />
         <option value="$PROJECT_DIR$/public/sximo/themes/sximone/css/sximone.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php" />
-        <option value="$PROJECT_DIR$/app/Models/Ycustomers.php" />
         <option value="$PROJECT_DIR$/public/sximo/css/sximo-light-blue.css" />
+        <option value="$PROJECT_DIR$/app/Models/Ycustomers.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Sximo/MenuController.php" />
+        <option value="$PROJECT_DIR$/app/Library/SiteHelpers.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/sidemenu.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Customereditmodel.php" />
       </list>
     </option>
   </component>
@@ -163,6 +244,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -191,7 +273,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -205,15 +287,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sximo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,19 +301,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sximo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elliot" />
+              <option name="myItemId" value="Models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,11 +319,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sximo" />
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sximo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,21 +341,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sximo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,25 +416,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27114803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27492446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -412,9 +477,9 @@
     <entry file="file://$PROJECT_DIR$/app/Models/Ycustomers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1441943805857" expanded="true" signature="327:366" placeholder="SELECT tb_cu..tb_customers..." />
+            <marker date="1442221856970" expanded="true" signature="-1:-1" placeholder="SELECT tb_cu..tb_customers..." />
           </folding>
         </state>
       </provider>
@@ -434,7 +499,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1441943805857" expanded="true" signature="327:366" placeholder="SELECT tb_cu..tb_customers..." />
+            <marker date="1442221856970" expanded="true" signature="-1:-1" placeholder="SELECT tb_cu..tb_customers..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
+          <folding>
+            <element signature="e#39#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Ycustomers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1442221856970" expanded="true" signature="-1:-1" placeholder="SELECT tb_cu..tb_customers..." />
           </folding>
         </state>
       </provider>
@@ -454,7 +539,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1441943805857" expanded="true" signature="327:366" placeholder="SELECT tb_cu..tb_customers..." />
+            <marker date="1442221856970" expanded="true" signature="-1:-1" placeholder="SELECT tb_cu..tb_customers..." />
           </folding>
         </state>
       </provider>
@@ -474,7 +559,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="37" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="37" />
           <folding>
-            <marker date="1441943805857" expanded="true" signature="327:366" placeholder="SELECT tb_cu..tb_customers..." />
+            <marker date="1442221856970" expanded="true" signature="-1:-1" placeholder="SELECT tb_cu..tb_customers..." />
           </folding>
         </state>
       </provider>
@@ -483,7 +568,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="43" selection-start-line="69" selection-start-column="7" selection-end-line="70" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#101#1486#0#PHP" expanded="false" />
+            <element signature="e#1490#1878#0#PHP" expanded="false" />
+            <element signature="e#1882#2610#0#PHP" expanded="false" />
+            <element signature="e#2616#4414#0#PHP" expanded="false" />
+            <element signature="e#4421#4892#0#PHP" expanded="false" />
+            <element signature="e#4896#5161#0#PHP" expanded="false" />
+            <element signature="e#5166#5563#0#PHP" expanded="false" />
+            <element signature="e#5567#5827#0#PHP" expanded="false" />
+            <element signature="e#5831#6061#0#PHP" expanded="false" />
+            <element signature="e#6066#6279#0#PHP" expanded="false" />
+            <marker date="1435139482000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -498,13 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.63422817">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -564,14 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Sximo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4633508">
-          <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/sximo/themes/elliot/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -614,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
-          <folding>
-            <element signature="e#39#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/sximo/css/sximo-light-blue.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33226323">
@@ -631,12 +703,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4463087">
+          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Sximo/Module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ycustomers/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.703704">
+          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Sximo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39261746">
+          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <folding>
+            <element signature="e#101#1486#0#PHP" expanded="false" />
+            <element signature="e#1490#1878#0#PHP" expanded="false" />
+            <element signature="e#1882#2610#0#PHP" expanded="false" />
+            <element signature="e#2616#4414#0#PHP" expanded="false" />
+            <element signature="e#4421#4892#0#PHP" expanded="false" />
+            <element signature="e#4896#5161#0#PHP" expanded="false" />
+            <element signature="e#5166#5563#0#PHP" expanded="false" />
+            <element signature="e#5567#5827#0#PHP" expanded="false" />
+            <element signature="e#5831#6061#0#PHP" expanded="false" />
+            <element signature="e#6066#6279#0#PHP" expanded="false" />
+            <marker date="1435139482000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Sximo/Menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12080537">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Ycustomers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.21140939">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding>
-            <marker date="1441943805857" expanded="true" signature="327:366" placeholder="SELECT tb_cu..tb_customers..." />
+            <marker date="1442221856970" expanded="true" signature="-1:-1" placeholder="SELECT tb_cu..tb_customers..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Sximo/MenuController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71529">
+          <caret line="173" column="5" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
+          <folding>
+            <element signature="e#45#71#0#PHP" expanded="true" />
+            <element signature="e#1581#2839#0#PHP" expanded="false" />
+            <element signature="e#2843#4311#0#PHP" expanded="false" />
+            <element signature="e#4315#4680#0#PHP" expanded="false" />
+            <marker date="1442241619801" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..tb_groups..." />
+            <marker date="1442241619801" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..tb_pages..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sximo/menu/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+          <folding>
+            <element signature="e#39#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidemenu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6666665">
+          <caret line="56" column="111" selection-start-line="56" selection-start-column="111" selection-end-line="56" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Library/SiteHelpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.203704">
+          <caret line="1470" column="32" selection-start-line="1470" selection-start-column="29" selection-end-line="1470" selection-end-column="32" />
+          <folding>
+            <element signature="n#menus#0;n#SiteHelpers#0;n#!!top" expanded="false" />
+            <element signature="n#nestedMenu#0;n#SiteHelpers#0;n#!!top" expanded="false" />
+            <marker date="1442241945401" expanded="true" signature="3114:3267" placeholder="SELECT tb_me..tb_menu..." />
+            <marker date="1442241945401" expanded="true" signature="12277:12353" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="12552:12620" placeholder="..." />
+            <marker date="1442241945401" expanded="false" signature="12723:12746" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="12748:12929" placeholder="..." />
+            <marker date="1442241945401" expanded="false" signature="13028:13051" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="13053:13354" placeholder="..." />
+            <marker date="1442241945401" expanded="false" signature="13517:13540" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="13542:13763" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="17018:17128" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="17460:17551" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="18096:18215" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="21348:21623" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="21401:21580" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="24335:24414" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="27270:27349" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="30324:30457" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="30569:30705" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="30817:30944" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="31032:31156" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="32940:33125" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="33016:33121" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="39383:39396" placeholder="..." />
+            <marker date="1442241945401" expanded="true" signature="39431:39439" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Customereditmodel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66442955">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding>
+            <marker date="1442244399065" expanded="true" signature="379:418" placeholder="SELECT tb_cu..tb_customers..." />
           </folding>
         </state>
       </provider>

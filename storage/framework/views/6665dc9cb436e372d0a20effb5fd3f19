@@ -30,7 +30,7 @@
 <div class="col-md-12">
 						<fieldset><legend> Yalla Customers</legend>
 									
-								  <div class="form-group  " > 
+								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Id" class=" control-label col-md-4 text-left"> 
 									<?php echo SiteHelpers::activeLang('Id', (isset($fields['id']['language'])? $fields['id']['language'] : array())); ?>	
 									</label>
@@ -42,11 +42,20 @@
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Group Id" class=" control-label col-md-4 text-left"> 
-									<?php echo SiteHelpers::activeLang('Group Id', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())); ?>	
+									<label for="User Group" class=" control-label col-md-4 text-left"> 
+									<?php echo SiteHelpers::activeLang('User Group', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <select name='group_id' rows='5' id='group_id' class='select2 ' required  ></select> 
+									  
+					<?php $group_id = explode(',',$row['group_id']);
+					$group_id_opt = array( '4' => 'Customer' , ); ?>
+					<select name='group_id' rows='5' required  class='select2 '  > 
+						<?php 
+						foreach($group_id_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['group_id'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -135,7 +144,7 @@
 									<?php echo SiteHelpers::activeLang('State', (isset($fields['state']['language'])? $fields['state']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  <?php echo Form::text('state', $row['state'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )); ?> 
+									  <select name='state' rows='5' id='state' class='select2 ' required  ></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -196,35 +205,23 @@
 									 	
 									 </div>
 								  </div> 					
-								  <div class="form-group  " > 
+								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Created At" class=" control-label col-md-4 text-left"> 
 									<?php echo SiteHelpers::activeLang('Created At', (isset($fields['created_at']['language'])? $fields['created_at']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  
-				<div class="input-group m-b" style="width:150px !important;">
-					<?php echo Form::text('created_at', $row['created_at'],array('class'=>'form-control datetime', 'style'=>'width:150px !important;')); ?>
-
-					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-				</div>
-				 
+									  <?php echo Form::text('created_at', $row['created_at'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
 									 </div>
 								  </div> 					
-								  <div class="form-group  " > 
+								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Updated At" class=" control-label col-md-4 text-left"> 
 									<?php echo SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())); ?>	
 									</label>
 									<div class="col-md-6">
-									  
-				<div class="input-group m-b" style="width:150px !important;">
-					<?php echo Form::text('updated_at', $row['updated_at'],array('class'=>'form-control datetime', 'style'=>'width:150px !important;')); ?>
-
-					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-				</div>
-				 
+									  <?php echo Form::text('updated_at', $row['updated_at'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -258,11 +255,11 @@
 	$(document).ready(function() { 
 		
 		
-		$("#group_id").jCombo("<?php echo e(URL::to('ycustomers/comboselect?filter=tb_groups:group_id:name')); ?>",
-		{  selected_value : '<?php echo e($row["group_id"]); ?>' });
-		
 		$("#city").jCombo("<?php echo e(URL::to('ycustomers/comboselect?filter=tb_cities:city_code:city_name')); ?>",
 		{  selected_value : '<?php echo e($row["city"]); ?>' });
+		
+		$("#state").jCombo("<?php echo e(URL::to('ycustomers/comboselect?filter=tb_states:id:state_name')); ?>",
+		{  selected_value : '<?php echo e($row["state"]); ?>' });
 		 
 
 		$('.removeCurrentFiles').on('click',function(){

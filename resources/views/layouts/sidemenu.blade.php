@@ -30,7 +30,8 @@
 			 <li @if(Request::segment(1) == $menu['module']) class="active" @endif>
 			 	<a 
 					@if($menu['menu_type'] =='external')
-						href="{{ $menu['url'] }}" 
+						{{--href="{{ $menu['url'] }}"--}}
+						href="<?=str_replace('{id}', SiteHelpers::getCustomerIdFromUserId(), $menu['url'])?>"
 					@else
 						href="{{ URL::to($menu['module'])}}" 
 					@endif				
@@ -52,7 +53,8 @@
 						 <li @if(Request::segment(1) == $menu2['module']) class="active" @endif>
 						 	<a 
 								@if($menu2['menu_type'] =='external')
-									href="{{ $menu2['url']}}" 
+									{{--href="{{ $menu2['url']}}" --}}
+									href="<?=str_replace('{id}', SiteHelpers::getCustomerIdFromUserId(), $menu2['url'])?>"
 								@else
 									href="{{ URL::to($menu2['module'])}}"  
 								@endif									
@@ -96,5 +98,5 @@
 		@endforeach
       </ul>
 	</div>
-</nav>	  
+</nav>
 	  

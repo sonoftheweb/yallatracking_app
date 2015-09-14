@@ -171,7 +171,7 @@ class MenuController extends Controller {
 		return Redirect::to('sximo/menu')
 				->with('messagetext', 'Successfully deleted row!')->with('msgstatus','success');
 
-	}						
+	}
 
 
 }
