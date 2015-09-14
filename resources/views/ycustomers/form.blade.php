@@ -47,7 +47,7 @@
 									{!! SiteHelpers::activeLang('Group Id', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('group_id', $row['group_id'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  <select name='group_id' rows='5' id='group_id' class='select2 ' required  ></select>
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -58,7 +58,7 @@
 									{!! SiteHelpers::activeLang('Username', (isset($fields['username']['language'])? $fields['username']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('username', $row['username'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('username', $row['username'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -69,7 +69,7 @@
 									{!! SiteHelpers::activeLang('Password', (isset($fields['password']['language'])? $fields['password']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('password', $row['password'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('password', $row['password'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -80,7 +80,7 @@
 									{!! SiteHelpers::activeLang('Email', (isset($fields['email']['language'])? $fields['email']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('email', $row['email'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('email', $row['email'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true', 'parsley-type'=>'email'   )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -91,7 +91,7 @@
 									{!! SiteHelpers::activeLang('First Name', (isset($fields['first_name']['language'])? $fields['first_name']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('first_name', $row['first_name'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('first_name', $row['first_name'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -102,7 +102,7 @@
 									{!! SiteHelpers::activeLang('Last Name', (isset($fields['last_name']['language'])? $fields['last_name']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('last_name', $row['last_name'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('last_name', $row['last_name'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -114,7 +114,7 @@
 									</label>
 									<div class="col-md-6">
 									  <textarea name='address' rows='5' id='address' class='form-control '  
-				           >{{ $row['address'] }}</textarea> 
+				         required  >{{ $row['address'] }}</textarea>
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -125,7 +125,7 @@
 									{!! SiteHelpers::activeLang('City', (isset($fields['city']['language'])? $fields['city']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('city', $row['city'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  <select name='city' rows='5' id='city' class='select2 ' required  ></select>
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -136,7 +136,7 @@
 									{!! SiteHelpers::activeLang('State', (isset($fields['state']['language'])? $fields['state']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('state', $row['state'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('state', $row['state'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -255,6 +255,12 @@
    <script type="text/javascript">
 	$(document).ready(function() { 
 		
+
+		$("#group_id").jCombo("{{ URL::to('ycustomers/comboselect?filter=tb_groups:group_id:name') }}",
+		{  selected_value : '{{ $row["group_id"] }}' });
+
+		$("#city").jCombo("{{ URL::to('ycustomers/comboselect?filter=tb_cities:city_code:city_name') }}",
+		{  selected_value : '{{ $row["city"] }}' });
 		 
 
 		$('.removeCurrentFiles').on('click',function(){
