@@ -213,6 +213,7 @@ class YcustomersController extends Controller {
 		{
 			$this->model->destroy($request->input('id'));
 
+			//find a way to delete users too.
 
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successful");
 			// redirect
