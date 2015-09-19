@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb660154-d7cc-4bd1-8eeb-3513f7468c3d" name="Default" comment="Customers editing their own details">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/Accounttypes.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/024863a2f6bdc6dac194e5bdd9cd0334" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/15238ac75bbf1f704ed5e484b7f548ee" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/51a7f0bf7581995c37c827e25ce6b3ca" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/6665dc9cb436e372d0a20effb5fd3f19" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/8b17efd653713ed0d2fdd81fdf517033" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/af250ff5efc52f0be00d95c56ecd67a0" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/views/b256949e078643982985fb86b7d8bd85" afterPath="" />
@@ -18,15 +18,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/2840ebda2e159f8c54ce53cf622c6e15" afterPath="$PROJECT_DIR$/storage/framework/views/2840ebda2e159f8c54ce53cf622c6e15" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/59e518b79e46816fd0fe8a06218005d1" afterPath="$PROJECT_DIR$/storage/framework/views/59e518b79e46816fd0fe8a06218005d1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/65b36dedb4ff58145df960ca2c62f159" afterPath="$PROJECT_DIR$/storage/framework/views/65b36dedb4ff58145df960ca2c62f159" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/6665dc9cb436e372d0a20effb5fd3f19" afterPath="$PROJECT_DIR$/storage/framework/views/6665dc9cb436e372d0a20effb5fd3f19" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/978c03f265f8acfb5ad3d83eaff02b9a" afterPath="$PROJECT_DIR$/storage/framework/views/978c03f265f8acfb5ad3d83eaff02b9a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/YcustomersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b16f7f43c82afc09dd55099bee53f983" afterPath="$PROJECT_DIR$/storage/framework/views/b16f7f43c82afc09dd55099bee53f983" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/b95111b6fb111ef59308b0293f9c27dc" afterPath="$PROJECT_DIR$/storage/framework/views/b95111b6fb111ef59308b0293f9c27dc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/d1da6f0d938b9ee9a10dffd522695f8b" afterPath="$PROJECT_DIR$/storage/framework/views/d1da6f0d938b9ee9a10dffd522695f8b" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/db7b499edf891ef86c56e8b0f9a01754" afterPath="$PROJECT_DIR$/storage/framework/views/db7b499edf891ef86c56e8b0f9a01754" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f0237af95e2a2a58624fbb759352181c" afterPath="$PROJECT_DIR$/storage/framework/views/f0237af95e2a2a58624fbb759352181c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/moduleroutes.php" afterPath="$PROJECT_DIR$/app/Http/moduleroutes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yallatracking.iws" />
@@ -155,11 +153,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -173,29 +167,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="accounttypes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yallatracking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yallatracking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="Models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,13 +268,26 @@
       <option name="project" value="LOCAL" />
       <updated>1442281230741</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Customers editing their own details">
+      <created>1442664902211</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1442664902211</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Customers editing their own details">
+      <created>1442664990233</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1442664990233</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -309,13 +298,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15558912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32718894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872504" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
