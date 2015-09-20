@@ -4,4 +4,5 @@
                     Route::controller('states', 'StatesController');
                     Route::controller('ycustomersedit', 'YcustomerseditController');
                     Route::controller('accounttypes', 'AccounttypesController');
+                    Route::controller('deladdress', 'DeladdressController');
                     ?>

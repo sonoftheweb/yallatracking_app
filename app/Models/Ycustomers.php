@@ -35,5 +35,12 @@ class ycustomers extends Sximo  {
 		return $id;
 	}
 
+	public function getUserFromCustomerID($cid){
+		$user_id = \DB::table('tb_customers')->where('id',$cid)->value('user_id');
+		$user_data = \DB::table('tb_users')->where('id', $user_id)->first();
+		unset($user_data->password);
+		return $user_data;
+	}
+
 
 }

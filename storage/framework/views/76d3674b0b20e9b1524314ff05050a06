@@ -1,0 +1,38 @@
+<div >
+<form id="<?php echo e($pageModule); ?>Search">
+<table class="table search-table table-striped">
+	<tbody>
+<?php foreach($tableForm as $t): ?>
+	<?php if($t['search'] =='1'): ?>
+		<tr>
+			<td><?php echo SiteHelpers::activeLang($t['label'],(isset($t['language'])? $t['language'] : array())); ?> </td>
+			<td><?php echo SiteHelpers::transForm($t['field'] , $tableForm); ?></td>
+		
+		</tr>
+	
+	<?php endif; ?>
+<?php endforeach; ?>
+		<tr>
+			<td></td>
+			<td><button type="button" name="search" class="doSearch btn btn-sm btn-primary"> Search </button></td>
+		
+		</tr>
+	</tbody>     
+	</table>
+</form>	
+</div>
+<script>
+jQuery(function(){
+		$('.date').datepicker({format:'yyyy-mm-dd',autoClose:true})
+		$('.datetime').datetimepicker({format: 'yyyy-mm-dd hh:ii:ss'}); 	
+	$('.doSearch').click(function(){
+		var attr = '';
+		$( '#<?php echo e($pageModule); ?>Search :input').each(function() {
+			if(this.value !=='' && this.name !='_token') { attr += this.name+':'+this.value+'|'; }
+		});
+		reloadData( '#<?php echo e($pageModule); ?>',"<?php echo e($pageUrl); ?>/data?search="+attr);	
+		$('#sximo-modal').modal('hide');
+	});
+});
+
+</script>

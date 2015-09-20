@@ -5,7 +5,7 @@ use App\Models\Ycustomers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
-use Validator, Input, Redirect ;
+use Validator, Input, Redirect, DB ;
 
 
 class YcustomersController extends Controller {
@@ -145,6 +145,15 @@ class YcustomersController extends Controller {
 		$validator = Validator::make($request->all(), $rules);
 		if ($validator->passes()) {
 			if($request->input('id') == ''){
+				//check if user exists and end the process if so
+				//$users = DB::table('tb_users')->select('username', 'email')->get();
+				$su = DB::table('tb_users')->where('username', $request->input('username'))->value('username');
+				$se = DB::table('tb_users')->where('email', $request->input('email'))->value('email');
+
+				if(!empty($su) && !empty($se)){
+					return Redirect::to('ycustomers')->with('messagetext','Duplicate Email and Username detected. Please use unique usernames and emails for each account.')->with('msgstatus','error')
+						->withErrors($validator)->withInput();
+				}
 
 				//now we insert new user data here
 				$code = rand(10000,10000000);
@@ -168,14 +177,19 @@ class YcustomersController extends Controller {
 				$data['password'] = 'SET';
 				$data['user_id'] = $userid;
 				$id = $this->model->insertNewCustomer($data);
+
+				//check account type is PAYG and add the balance as 0
+				if($request->input('account_type')==4)
+				{
+					DB::table('tb_payg_balance')->insert(
+						['user_id' => $userid, 'balance' => 0]
+					);
+				}
 			}
 			else {
 				$data = $this->validatePost('tb_ycustomers');
 				$id = $this->model->insertRow($data, $request->input('id'));
 			}
-
-
-
 
 			if(!is_null($request->input('apply')))
 			{
@@ -211,9 +225,12 @@ class YcustomersController extends Controller {
 		// delete multipe rows 
 		if(count($request->input('id')) >=1)
 		{
-			$this->model->destroy($request->input('id'));
+			//delete user object
+			$userdata = $this->model->getUserFromCustomerID($request->input('id'));
+			$authen = new User;
+			$authen->destroy($userdata->id);
 
-			//find a way to delete users too.
+			$this->model->destroy($request->input('id'));
 
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successful");
 			// redirect

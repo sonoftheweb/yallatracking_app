@@ -49,6 +49,14 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Account Type', (isset($fields['account_type']['language'])? $fields['account_type']['language'] : array())) }}	
+						</td>
+						<td>{!! SiteHelpers::gridDisplayView($row->account_type,'account_type','1:tb_account_types:id:account_type_name') !!} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Email', (isset($fields['email']['language'])? $fields['email']['language'] : array())) }}	
 						</td>
 						<td>{{ $row->email }} </td>
@@ -83,7 +91,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('City', (isset($fields['city']['language'])? $fields['city']['language'] : array())) }}	
 						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->city,'city','1:tb_cities:city_code:city_name') !!} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->city,'city','1:tb_cities:id:city_name') !!} </td>
 						
 					</tr>
 				
@@ -148,6 +156,14 @@
 							{{ SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())) }}	
 						</td>
 						<td>{{ $row->updated_at }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}	
+						</td>
+						<td>{!! SiteHelpers::gridDisplayView($row->entry_by,'entry_by','1:tb_users:id:first_name|last_name') !!} </td>
 						
 					</tr>
 				

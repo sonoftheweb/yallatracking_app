@@ -1,35 +1,17 @@
-@extends('layouts.app')
 
-@section('content')
+@if($setting['form-method'] =='native')
+	<div class="sbox">
+		<div class="sbox-title">  
+			<h4> <i class="fa fa-table"></i> <?php echo $pageTitle ;?> <small>{{ $pageNote }}</small>
+				<a href="javascript:void(0)" class="collapse-close pull-right btn btn-xs btn-danger" onclick="ajaxViewClose('#{{ $pageModule }}')"><i class="fa fa fa-times"></i></a>
+			</h4>
+	</div>
 
-  <div class="page-content row">
-    <!-- Page header -->
-    <div class="page-header">
-      <div class="page-title">
-        <h3> {{ $pageTitle }} <small>{{ $pageNote }}</small></h3>
-      </div>
-      <ul class="breadcrumb">
-        <li><a href="{{ URL::to('dashboard') }}">{{ Lang::get('core.home') }}</a></li>
-		<li><a href="{{ URL::to('ycustomers?return='.$return) }}">{{ $pageTitle }}</a></li>
-        <li class="active">{{ Lang::get('core.addedit') }} </li>
-      </ul>
-	  	  
-    </div>
- 
- 	<div class="page-content-wrapper">
-
-		<ul class="parsley-error-list">
-			@foreach($errors->all() as $error)
-				<li>{{ $error }}</li>
-			@endforeach
-		</ul>
-<div class="sbox animated fadeInRight">
-	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
-	<div class="sbox-content"> 	
-
-		 {!! Form::open(array('url'=>'ycustomers/save?return='.$return, 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')) !!}
-<div class="col-md-12">
-						<fieldset><legend> Yalla Customers</legend>
+	<div class="sbox-content"> 
+@endif	
+			{!! Form::open(array('url'=>'ycustomersedit/save/'.SiteHelpers::encryptID($row['id']), 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ','id'=> 'ycustomerseditFormAjax')) !!}
+			<div class="col-md-12">
+						<fieldset><legend> Edit Your Details</legend>
 									
 								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Id" class=" control-label col-md-4 text-left"> 
@@ -37,59 +19,6 @@
 									</label>
 									<div class="col-md-6">
 									  {!! Form::text('id', $row['id'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
-									 </div> 
-									 <div class="col-md-2">
-									 	
-									 </div>
-								  </div> 					
-								  <div class="form-group  " > 
-									<label for="User Group" class=" control-label col-md-4 text-left"> 
-									{!! SiteHelpers::activeLang('User Group', (isset($fields['group_id']['language'])? $fields['group_id']['language'] : array())) !!}	
-									</label>
-									<div class="col-md-6">
-									  
-					<?php $group_id = explode(',',$row['group_id']);
-					$group_id_opt = array( '4' => 'Customer' , ); ?>
-					<select name='group_id' rows='5' required  class='select2 '  > 
-						<?php 
-						foreach($group_id_opt as $key=>$val)
-						{
-							echo "<option  value ='$key' ".($row['group_id'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
-						}						
-						?></select> 
-									 </div> 
-									 <div class="col-md-2">
-									 	
-									 </div>
-								  </div> 					
-								  <div class="form-group  " > 
-									<label for="Account Type" class=" control-label col-md-4 text-left"> 
-									{!! SiteHelpers::activeLang('Account Type', (isset($fields['account_type']['language'])? $fields['account_type']['language'] : array())) !!}	
-									</label>
-									<div class="col-md-6">
-									  <select name='account_type' rows='5' id='account_type' class='select2 ' required  ></select> 
-									 </div> 
-									 <div class="col-md-2">
-									 	
-									 </div>
-								  </div> 					
-								  <div class="form-group  " > 
-									<label for="Username" class=" control-label col-md-4 text-left"> 
-									{!! SiteHelpers::activeLang('Username', (isset($fields['username']['language'])? $fields['username']['language'] : array())) !!}	
-									</label>
-									<div class="col-md-6">
-									  {!! Form::text('username', $row['username'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!} 
-									 </div> 
-									 <div class="col-md-2">
-									 	
-									 </div>
-								  </div> 					
-								  <div class="form-group  " > 
-									<label for="Password" class=" control-label col-md-4 text-left"> 
-									{!! SiteHelpers::activeLang('Password', (isset($fields['password']['language'])? $fields['password']['language'] : array())) !!}	
-									</label>
-									<div class="col-md-6">
-									  {!! Form::text('password', $row['password'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!} 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -111,7 +40,7 @@
 									{!! SiteHelpers::activeLang('First Name', (isset($fields['first_name']['language'])? $fields['first_name']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('first_name', $row['first_name'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!} 
+									  {!! Form::text('first_name', $row['first_name'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -122,7 +51,7 @@
 									{!! SiteHelpers::activeLang('Last Name', (isset($fields['last_name']['language'])? $fields['last_name']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('last_name', $row['last_name'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )) !!} 
+									  {!! Form::text('last_name', $row['last_name'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -134,7 +63,7 @@
 									</label>
 									<div class="col-md-6">
 									  <textarea name='address' rows='5' id='address' class='form-control '  
-				         required  >{{ $row['address'] }}</textarea> 
+				           >{{ $row['address'] }}</textarea> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -145,7 +74,7 @@
 									{!! SiteHelpers::activeLang('City', (isset($fields['city']['language'])? $fields['city']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  <select name='city' rows='5' id='city' class='select2 ' required  ></select> 
+									  <select name='city' rows='5' id='city' class='select2 '   ></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -156,7 +85,7 @@
 									{!! SiteHelpers::activeLang('State', (isset($fields['state']['language'])? $fields['state']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  <select name='state' rows='5' id='state' class='select2 ' required  ></select> 
+									  <select name='state' rows='5' id='state' class='select2 '   ></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -185,8 +114,8 @@
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Phone 2" class=" control-label col-md-4 text-left"> 
-									{!! SiteHelpers::activeLang('Phone 2', (isset($fields['phone_2']['language'])? $fields['phone_2']['language'] : array())) !!}	
+									<label for="Alternate Phone " class=" control-label col-md-4 text-left"> 
+									{!! SiteHelpers::activeLang('Alternate Phone ', (isset($fields['phone_2']['language'])? $fields['phone_2']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
 									  {!! Form::text('phone_2', $row['phone_2'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
@@ -200,7 +129,7 @@
 									{!! SiteHelpers::activeLang('Alternate Email', (isset($fields['alternate_email']['language'])? $fields['alternate_email']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('alternate_email', $row['alternate_email'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  {!! Form::text('alternate_email', $row['alternate_email'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true', 'parsley-type'=>'email'   )) !!} 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -241,48 +170,93 @@
 								  </div> </fieldset>
 			</div>
 			
-			
-
-		
+												
+								
+						
 			<div style="clear:both"></div>	
-				
-					
-				  <div class="form-group">
-					<label class="col-sm-4 text-right">&nbsp;</label>
-					<div class="col-sm-8">	
-					<button type="submit" name="apply" class="btn btn-info btn-sm" ><i class="fa  fa-check-circle"></i> {{ Lang::get('core.sb_apply') }}</button>
-					<button type="submit" name="submit" class="btn btn-primary btn-sm" ><i class="fa  fa-save "></i> {{ Lang::get('core.sb_save') }}</button>
-					<button type="button" onclick="location.href='{{ URL::to('ycustomers?return='.$return) }}' " class="btn btn-success btn-sm "><i class="fa  fa-arrow-circle-left "></i>  {{ Lang::get('core.sb_cancel') }} </button>
-					</div>	  
-			
-				  </div> 
-		 
-		 {!! Form::close() !!}
-	</div>
-</div>		 
+							
+			<div class="form-group">
+				<label class="col-sm-4 text-right">&nbsp;</label>
+				<div class="col-sm-8">	
+					<button type="submit" class="btn btn-primary btn-sm "><i class="fa  fa-save "></i>  {{ Lang::get('core.sb_save') }} </button>
+					<button type="button" onclick="ajaxViewClose('#{{ $pageModule }}')" class="btn btn-success btn-sm"><i class="fa  fa-arrow-circle-left "></i>  {{ Lang::get('core.sb_cancel') }} </button>
+				</div>			
+			</div> 		 
+			{!! Form::close() !!}
+
+
+@if($setting['form-method'] =='native')
+	</div>	
 </div>	
-</div>			 
-   <script type="text/javascript">
-	$(document).ready(function() { 
-		
-		
-		$("#account_type").jCombo("{{ URL::to('ycustomers/comboselect?filter=tb_account_types:id:account_type_name') }}",
-		{  selected_value : '{{ $row["account_type"] }}' });
-		
-		$("#city").jCombo("{{ URL::to('ycustomers/comboselect?filter=tb_cities:id:city_name') }}",
+@endif	
+
+	
+</div>	
+			 
+<script type="text/javascript">
+$(document).ready(function() { 
+	
+		$("#city").jCombo("{{ URL::to('ycustomersedit/comboselect?filter=tb_cities:id:city_name') }}",
 		{  selected_value : '{{ $row["city"] }}' });
 		
-		$("#state").jCombo("{{ URL::to('ycustomers/comboselect?filter=tb_states:id:state_name') }}",
+		$("#state").jCombo("{{ URL::to('ycustomersedit/comboselect?filter=tb_states:id:state_name') }}",
 		{  selected_value : '{{ $row["state"] }}' });
 		 
-
-		$('.removeCurrentFiles').on('click',function(){
-			var removeUrl = $(this).attr('href');
-			$.get(removeUrl,function(response){});
-			$(this).parent('div').empty();	
-			return false;
-		});		
+	
+	$('.editor').summernote();
+	$('.previewImage').fancybox();	
+	$('.tips').tooltip();	
+	$(".select2").select2({ width:"98%"});	
+	$('.date').datepicker({format:'yyyy-mm-dd',autoClose:true})
+	$('.datetime').datetimepicker({format: 'yyyy-mm-dd hh:ii:ss'}); 
+	$('input[type="checkbox"],input[type="radio"]').iCheck({
+		checkboxClass: 'icheckbox_square-green',
+		radioClass: 'iradio_square-green',
+	});			
+	$('.removeCurrentFiles').on('click',function(){
+		var removeUrl = $(this).attr('href');
+		$.get(removeUrl,function(response){});
+		$(this).parent('div').empty();	
+		return false;
+	});			
+	var form = $('#ycustomerseditFormAjax'); 
+	form.parsley();
+	form.submit(function(){
 		
+		if(form.parsley('isValid') == true){			
+			var options = { 
+				dataType:      'json', 
+				beforeSubmit :  showRequest,
+				success:       showResponse  
+			}  
+			$(this).ajaxSubmit(options); 
+			return false;
+						
+		} else {
+			return false;
+		}		
+	
 	});
-	</script>		 
-@stop
+
+});
+
+function showRequest()
+{
+	$('.ajaxLoading').show();		
+}  
+function showResponse(data)  {		
+	
+	if(data.status == 'success')
+	{
+		ajaxViewClose('#{{ $pageModule }}');
+		ajaxFilter('#{{ $pageModule }}','{{ $pageUrl }}/data');
+		notyMessage(data.message);	
+		$('#sximo-modal').modal('hide');	
+	} else {
+		notyMessageError(data.message);	
+		$('.ajaxLoading').hide();
+		return false;
+	}	
+}			 
+
+</script>		 
