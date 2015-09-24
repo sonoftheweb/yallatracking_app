@@ -122,7 +122,6 @@ class DeladdressController extends Controller {
 		$this->data['id'] = $id;
 		$gcid = new ycustomers();
 		$this->data['cid'] = $gcid->getcustomerIDFromUserID();
-
 		return view('deladdress.form',$this->data);
 	}	
 

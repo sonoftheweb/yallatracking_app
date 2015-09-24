@@ -15,7 +15,7 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer Id', (isset($fields['customer_id']['language'])? $fields['customer_id']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Customer', (isset($fields['customer_id']['language'])? $fields['customer_id']['language'] : array())) }}	
 						</td>
 						<td>{!! SiteHelpers::gridDisplayView($row->customer_id,'customer_id','1:tb_customers:id:first_name|last_name|company') !!} </td>
 						
@@ -33,7 +33,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Delivery City', (isset($fields['delivery_city']['language'])? $fields['delivery_city']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->delivery_city }} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->delivery_city,'delivery_city','1:tb_cities:id:city_name') !!} </td>
 						
 					</tr>
 				
@@ -41,7 +41,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Delivery State', (isset($fields['delivery_state']['language'])? $fields['delivery_state']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->delivery_state }} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->delivery_state,'delivery_state','1:tb_states:id:state_name') !!} </td>
 						
 					</tr>
 				
@@ -50,14 +50,6 @@
 							{{ SiteHelpers::activeLang('Delivery Country', (isset($fields['delivery_country']['language'])? $fields['delivery_country']['language'] : array())) }}	
 						</td>
 						<td>{{ $row->delivery_country }} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}	
-						</td>
-						<td>{{ $row->entry_by }} </td>
 						
 					</tr>
 				

@@ -20,12 +20,13 @@ class deladdress extends Sximo  {
 	}	
 
 	public static function queryWhere(  ){
-		$gcid = new ycustomers();
-		return "  WHERE tb_delivery_addresses.customer_id = ".$gcid->getcustomerIDFromUserID();
+		$yc = new ycustomers();
+		return "  WHERE tb_delivery_addresses.customer_id =".$yc->getcustomerIDFromUserID();
 	}
 	
 	public static function queryGroup(){
 		return "  ";
 	}
+	
 
 }
