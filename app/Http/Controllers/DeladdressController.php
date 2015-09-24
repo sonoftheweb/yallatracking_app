@@ -4,7 +4,8 @@ use App\Http\Controllers\controller;
 use App\Models\Deladdress;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
-use Validator, Input, Redirect ; 
+use Validator, Input, Redirect ;
+use App\Models\ycustomers;
 
 class DeladdressController extends Controller {
 
@@ -119,6 +120,8 @@ class DeladdressController extends Controller {
 		$this->data['fields'] 		=  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 		
 		$this->data['id'] = $id;
+		$gcid = new ycustomers();
+		$this->data['cid'] = $gcid->getcustomerIDFromUserID();
 
 		return view('deladdress.form',$this->data);
 	}	

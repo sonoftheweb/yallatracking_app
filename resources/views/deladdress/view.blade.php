@@ -53,6 +53,14 @@
 						
 					</tr>
 				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->entry_by }} </td>
+						
+					</tr>
+				
 			</tbody>	
 		</table>  
 			

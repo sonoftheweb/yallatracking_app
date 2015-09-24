@@ -24,12 +24,12 @@
 									 	
 									 </div>
 								  </div> 					
-								  <div class="form-group  " > 
+								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Customer Id" class=" control-label col-md-4 text-left"> 
 									{!! SiteHelpers::activeLang('Customer Id', (isset($fields['customer_id']['language'])? $fields['customer_id']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  <select name='customer_id' rows='5' id='customer_id' class='select2 '   ></select> 
+									  {!! Form::text('customer_id', $cid, array('class'=>'form-control', 'placeholder'=>'',   )) !!}
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -51,7 +51,7 @@
 									{!! SiteHelpers::activeLang('Delivery City', (isset($fields['delivery_city']['language'])? $fields['delivery_city']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('delivery_city', $row['delivery_city'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  <select name='delivery_city' rows='5' id='delivery_city' class='select2 '   ></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -62,7 +62,7 @@
 									{!! SiteHelpers::activeLang('Delivery State', (isset($fields['delivery_state']['language'])? $fields['delivery_state']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  {!! Form::text('delivery_state', $row['delivery_state'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									  <select name='delivery_state' rows='5' id='delivery_state' class='select2 '   ></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -107,8 +107,11 @@
 <script type="text/javascript">
 $(document).ready(function() { 
 	
-		$("#customer_id").jCombo("{{ URL::to('deladdress/comboselect?filter=tb_customers:id:first_name|last_name|company') }}",
-		{  selected_value : '{{ $row["customer_id"] }}' });
+		$("#delivery_city").jCombo("{{ URL::to('deladdress/comboselect?filter=tb_cities:id:city_name') }}",
+		{  selected_value : '{{ $row["delivery_city"] }}' });
+		
+		$("#delivery_state").jCombo("{{ URL::to('deladdress/comboselect?filter=tb_states:id:state_name') }}",
+		{  selected_value : '{{ $row["delivery_state"] }}' });
 		 
 	
 	$('.editor').summernote();

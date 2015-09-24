@@ -2,6 +2,7 @@
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class ycustomers extends Sximo  {
 
@@ -40,6 +41,11 @@ class ycustomers extends Sximo  {
 		$user_data = \DB::table('tb_users')->where('id', $user_id)->first();
 		unset($user_data->password);
 		return $user_data;
+	}
+
+	public function getcustomerIDFromUserID(){
+		$customerDetails = \DB::table('tb_customers')->where('user_id', Session::get('uid'))->first();
+		return $customerDetails->id;
 	}
 
 

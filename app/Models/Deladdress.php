@@ -2,6 +2,7 @@
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ycustomers;
 
 class deladdress extends Sximo  {
 	
@@ -19,13 +20,12 @@ class deladdress extends Sximo  {
 	}	
 
 	public static function queryWhere(  ){
-		
-		return "  WHERE tb_delivery_addresses.id IS NOT NULL ";
+		$gcid = new ycustomers();
+		return "  WHERE tb_delivery_addresses.customer_id = ".$gcid->getcustomerIDFromUserID();
 	}
 	
 	public static function queryGroup(){
 		return "  ";
 	}
-	
 
 }
