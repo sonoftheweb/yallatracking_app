@@ -189,6 +189,14 @@ class YcustomersController extends Controller {
 			else {
 				$data = $this->validatePost('tb_ycustomers');
 				$id = $this->model->insertRow($data, $request->input('id'));
+				if($request->input('account_type') == '4'){
+					$userid = $this->model->getUserFromCustomerID($request->input('id'));
+					$this->model->setPaygBalanceDefault($userid->id,'add');
+				}
+				else{
+					$userid = $this->model->getUserFromCustomerID($request->input('id'));
+					$this->model->setPaygBalanceDefault($userid->id,'delete');
+				}
 			}
 
 			if(!is_null($request->input('apply')))
