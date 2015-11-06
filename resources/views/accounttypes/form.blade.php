@@ -11,7 +11,7 @@
 @endif	
 			{!! Form::open(array('url'=>'accounttypes/save/'.SiteHelpers::encryptID($row['id']), 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ','id'=> 'accounttypesFormAjax')) !!}
 			<div class="col-md-12">
-						<fieldset><legend> Account Types</legend>
+						<fieldset><legend> Account Packages</legend>
 									
 								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Id" class=" control-label col-md-4 text-left"> 

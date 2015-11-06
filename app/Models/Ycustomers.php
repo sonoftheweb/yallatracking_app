@@ -9,7 +9,6 @@ class ycustomers extends Sximo  {
 	protected $table = 'tb_customers';
 	protected $primaryKey = 'id';
 	protected $pt = 'tb_payg_balance';
-	protected $cmd = 'tb_customer_meta_data';
 
 	public function __construct() {
 		parent::__construct();
@@ -73,35 +72,60 @@ class ycustomers extends Sximo  {
 
 	public function updateCustomerMeta($customer_id,$meta_name,$meta_value){
 		if(!empty($customer_id)){
-			$check_meta_value = $this->getCustomerMeta($meta_name,$customer_id);
-			if(empty($check_meta_value)){
-				\DB::table($this->cmd)
-					->insert(
-					['customer_id'=>$customer_id,'meta_name'=>$meta_name,'meta_value'=>$meta_value]
+			$check_meta_value = $this->getCustomerMeta($customer_id);
+				$check_meta_value[$meta_name] = $meta_value;
+				$insert_meta_value_serialized = serialize($check_meta_value);
+				\DB::table($this->table)
+					->where('id',$customer_id)
+					->update(
+					['customer_meta'=>$insert_meta_value_serialized]
 				);
-			}
-			else{
-				\DB::table($this->cmd)
-					->where('customer_id',$customer_id)
-					->where('meta_name',$meta_name)
-					->update(['meta_value'=>$meta_value]);
-			}
 		}else{
 			return;
 		}
 	}
 
-	public function getCustomerMeta($meta_name, $cid){
-		if(!empty($cid) && !empty($meta_name)){
+	public function getCustomerMeta($cid,$meta_name=''){
+		if(!empty($cid)){
 			//query the database for this customer's meta name
-			$meta_value = \DB::table($this->cmd)
+			$meta_value = \DB::table($this->table)
 				->where('customer_id',$cid)
-				->where('meta_name',$meta_name)
+				->where('customer_meta',$meta_name)
 				->first()
-				->value('meta_value');
+				->value('customer_meta');
+			$meta_value = unserialize($meta_value);
+			if(!empty($meta_name)){
+				$meta_value = $meta_value[$meta_name];
+			}
 			return $meta_value;
 		}else{
 			return;
 		}
 	}
+
+	/*public function update_user_to_group($customer_id,$group_id){
+		if(!empty($customer_id)){
+			//check if the customer is added to a user group
+			$customers_in_groups = \DB::table($this->group_table)
+				->where('customer_id',$customer_id)
+				->where('group_id',$group_id)
+				->count();
+
+			if($customers_in_groups < 1){
+				\DB::table($this->group_table)
+					->insert(
+						['customer_id' => $customer_id,'group_id' => $group_id]
+					);
+			}
+			else {
+				\DB::table($this->group_table)
+					->where('customer_id', $customer_id)
+					->update(
+						['group_id' => $group_id]
+					);
+			}
+		}else{
+			return;
+		}
+	}*/
 }

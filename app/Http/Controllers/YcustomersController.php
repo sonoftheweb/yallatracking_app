@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\controller;
 use App\Models\Ycustomers;
+use App\Models\Customergroups;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
@@ -10,10 +11,10 @@ use Validator, Input, Redirect, DB ;
 
 class YcustomersController extends Controller {
 
+	static $per_page	= '10';
+	public $module = 'ycustomers';
 	protected $layout = "layouts.main";
 	protected $data = array();
-	public $module = 'ycustomers';
-	static $per_page	= '10';
 
 	public function __construct()
 	{
@@ -111,7 +112,7 @@ class YcustomersController extends Controller {
 			$this->data['row'] = $this->model->getColumnTable('tb_customers');
 		}
 		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
-
+		$this->data['customer_groups'] = Customergroups::all()->toArray();
 
 		$this->data['id'] = $id;
 		return view('ycustomers.form',$this->data);
@@ -140,7 +141,6 @@ class YcustomersController extends Controller {
 
 	function postSave( Request $request)
 	{
-
 		$rules = $this->validateForm();
 		$validator = Validator::make($request->all(), $rules);
 		if ($validator->passes()) {
@@ -176,6 +176,7 @@ class YcustomersController extends Controller {
 				//unset($data['password']);
 				$data['password'] = 'SET';
 				$data['user_id'] = $userid;
+
 				$id = $this->model->insertNewCustomer($data);
 
 				//check account type is PAYG and add the balance as 0
@@ -189,6 +190,7 @@ class YcustomersController extends Controller {
 			else {
 				$data = $this->validatePost('tb_ycustomers');
 				$id = $this->model->insertRow($data, $request->input('id'));
+
 				if($request->input('account_type') == '4'){
 					$userid = $this->model->getUserFromCustomerID($request->input('id'));
 					$this->model->setPaygBalanceDefault($userid->id,'add');

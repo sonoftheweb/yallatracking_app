@@ -2,8 +2,9 @@
 	copyright 2014 . sximo builder com 
 */
 
+
+
 jQuery(document).ready(function($){
-		
 		if($.cookie("sxintheme") != '')
 		{
 			$('#switchTheme').attr('href',$.cookie("sxintheme"));

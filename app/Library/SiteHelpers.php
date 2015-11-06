@@ -1469,8 +1469,18 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 
 	public static function getCustomerIdFromUserId(){
 		$uid = Session::get('uid');
-		$uid = DB::table('tb_customers')->where('user_id', $uid)->pluck('id');
-		return $uid;
+		$cid = DB::table('tb_customers')->where('user_id', $uid)->pluck('id');
+		return $cid;
+	}
+
+	public static function is_payg_customer(){
+		$uid = Session::get('uid');
+		$account_type = DB::table('tb_customers')->where('user_id',$uid)->pluck('account_type');
+		if($account_type == 4):
+			return '1';
+		else:
+			return '0';
+		endif;
 	}
 	 	 		
 			

@@ -37,6 +37,14 @@
 						
 					</tr>
 				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('City Zone', (isset($fields['city_zone']['language'])? $fields['city_zone']['language'] : array())) }}	
+						</td>
+						<td>{!! SiteHelpers::gridDisplayView($row->city_zone,'city_zone','1:tb_zones:id:zone_name|zone_key') !!} </td>
+						
+					</tr>
+				
 			</tbody>	
 		</table>  
 			

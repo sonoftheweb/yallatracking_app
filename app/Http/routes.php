@@ -62,4 +62,3 @@ Route::group(['middleware' => 'auth' , 'middleware'=>'sximoauth'], function()
 
 
 
-

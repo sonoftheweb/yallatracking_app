@@ -56,6 +56,17 @@
 									 <div class="col-md-2">
 									 	
 									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="City Zone" class=" control-label col-md-4 text-left"> 
+									{!! SiteHelpers::activeLang('City Zone', (isset($fields['city_zone']['language'])? $fields['city_zone']['language'] : array())) !!}	
+									</label>
+									<div class="col-md-6">
+									  <select name='city_zone' rows='5' id='city_zone' class='select2 '   ></select> 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
 								  </div> </fieldset>
 			</div>
 			
@@ -87,6 +98,9 @@ $(document).ready(function() {
 	
 		$("#city_state").jCombo("{{ URL::to('cities/comboselect?filter=tb_states:state_code:state_name') }}",
 		{  selected_value : '{{ $row["city_state"] }}' });
+		
+		$("#city_zone").jCombo("{{ URL::to('cities/comboselect?filter=tb_zones:id:zone_name|zone_key') }}",
+		{  selected_value : '{{ $row["city_zone"] }}' });
 		 
 	
 	$('.editor').summernote();

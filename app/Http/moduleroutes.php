@@ -7,4 +7,11 @@
                     Route::controller('deladdress', 'DeladdressController');
                     Route::controller('admincustdeladdview', 'AdmincustdeladdviewController');
                     Route::controller('paygbalance', 'PaygbalanceController');
+                    Route::controller('companybranches', 'CompanybranchesController');
+                    Route::controller('zones', 'ZonesController');
+                    Route::controller('customergroups', 'CustomergroupsController');
+                    Route::controller('basepricing', 'BasepricingController');
+                    Route::controller('weightbasedpricing', 'WeightbasedpricingController');
+                    Route::controller('prioritypricing', 'PrioritypricingController');
+                    Route::controller('requestdeliveries', 'RequestdeliveriesController');
                     ?>

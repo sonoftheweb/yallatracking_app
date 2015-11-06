@@ -41,17 +41,17 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('UID', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Account Type', (isset($fields['account_type']['language'])? $fields['account_type']['language'] : array())) }}	
 						</td>
-						<td>{{ $row->user_id }} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->account_type,'account_type','1:tb_account_types:id:account_type_name') !!} </td>
 						
 					</tr>
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Account Type', (isset($fields['account_type']['language'])? $fields['account_type']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Customer Group', (isset($fields['customer_group']['language'])? $fields['customer_group']['language'] : array())) }}	
 						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->account_type,'account_type','1:tb_account_types:id:account_type_name') !!} </td>
+						<td>{!! SiteHelpers::gridDisplayView($row->customer_group,'customer_group','1:tb_customer_group:id:group_name') !!} </td>
 						
 					</tr>
 				
@@ -161,9 +161,57 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('UID', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->user_id }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}	
 						</td>
 						<td>{!! SiteHelpers::gridDisplayView($row->entry_by,'entry_by','1:tb_users:id:first_name|last_name') !!} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Customer Company Rc Number', (isset($fields['customer_company_rc_number']['language'])? $fields['customer_company_rc_number']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->customer_company_rc_number }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Customer Company Director Name', (isset($fields['customer_company_director_name']['language'])? $fields['customer_company_director_name']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->customer_company_director_name }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Customer Company Director Name 2', (isset($fields['customer_company_director_name_2']['language'])? $fields['customer_company_director_name_2']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->customer_company_director_name_2 }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Customer Company Opening Hours', (isset($fields['customer_company_opening_hours']['language'])? $fields['customer_company_opening_hours']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->customer_company_opening_hours }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Customer Preferred Pickup Times', (isset($fields['customer_preferred_pickup_times']['language'])? $fields['customer_preferred_pickup_times']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->customer_preferred_pickup_times }} </td>
 						
 					</tr>
 				

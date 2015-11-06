@@ -21,7 +21,8 @@
 		<link href="{{ asset('sximo/js/plugins/select2/select2.css')}}" rel="stylesheet">
 		<link href="{{ asset('sximo/js/plugins/iCheck/skins/square/green.css')}}" rel="stylesheet">
 		<link href="{{ asset('sximo/js/plugins/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
-			
+		<link href="{{ asset('sximo/js/plugins/clockpicker/jquery-clockpicker.css') }}" rel="stylesheet">
+
 		<link href="{{ asset('sximo/css/animate.css')}}" rel="stylesheet">		
 		<link href="{{ asset('sximo/css/icons.min.css')}}" rel="stylesheet">
 		<link href="{{ asset('sximo/js/plugins/toastr/toastr.css')}}" rel="stylesheet">
@@ -50,8 +51,9 @@
 		<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.jCombo.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('sximo/js/plugins/toastr/toastr.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap.summernote/summernote.min.js') }}"></script>
-		<script type="text/javascript" src="{{ asset('sximo/js/simpleclone.js') }}"></script>	
-		
+		<script type="text/javascript" src="{{ asset('sximo/js/plugins/clockpicker/jquery-clockpicker.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('sximo/js/simpleclone.js') }}"></script>
+
 
 		<!-- AJax -->
 		<link href="{{ asset('sximo/js/plugins/ajax/ajaxSximo.css')}}" rel="stylesheet"> 
