@@ -26,6 +26,15 @@ class basepricing extends Sximo  {
 	public static function queryGroup(){
 		return "  ";
 	}
-	
+
+    public function getCityZonesFromCitiesTable(){
+        $cityZones = \DB::table('tb_cities')->distinct()->get();
+        $cityZonesArray = [];
+        foreach($cityZones as $cz){
+            $cityZonesArray[$cz->city_code] = $cz->city_code;
+        }
+
+        return $cityZonesArray;
+    }
 
 }

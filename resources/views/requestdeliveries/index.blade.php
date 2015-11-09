@@ -74,6 +74,7 @@
 						<th>{{ SiteHelpers::activeLang($t['label'],(isset($t['language'])? $t['language'] : array())) }}</th>
 					@endif
 				@endforeach
+				<th width="70" >Bill</th>
 				<th width="70" >{{ Lang::get('core.btn_action') }}</th>
 			  </tr>
         </thead>
@@ -89,6 +90,7 @@
 					</td>
 					@endif
 				@endforeach
+				<td></td>
 				<td >
 				<input type="hidden"  value="Search">
 				<button type="button"  class=" do-quick-search btn btn-xs btn-info"> GO</button></td>
@@ -110,6 +112,9 @@
 					 </td>
 					 @endif					 
 				 @endforeach
+				<td>
+					<strong>&#8358;{!! SiteHelpers::calc_delivery_fee($row->parcel_delivery_code) !!}</strong>
+				</td>
 				 <td>
 					 	@if($access['is_detail'] ==1)
 						<a href="{{ URL::to('requestdeliveries/show/'.$row->id.'?return='.$return)}}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>

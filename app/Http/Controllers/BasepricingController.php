@@ -120,6 +120,8 @@ class BasepricingController extends Controller {
 		
 		$this->data['id'] = $id;
 
+		$this->data['zones'] = $this->model->getCityZonesFromCitiesTable();
+
 		return view('basepricing.form',$this->data);
 	}	
 

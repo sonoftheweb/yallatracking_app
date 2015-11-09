@@ -157,9 +157,9 @@ class RequestdeliveriesController extends Controller {
 			// Insert logs into database
 			if($request->input('id') =='')
 			{
-				\SiteHelpers::auditTrail( $request , 'New Data with ID '.$id.' Has been Inserted !');
+				\SiteHelpers::auditTrail( $request , 'New Delivery with Delivery Code '.$request->input('parcel_delivery_code').' Has been Added !');
 			} else {
-				\SiteHelpers::auditTrail($request ,'Data with ID '.$id.' Has been Updated !');
+				\SiteHelpers::auditTrail($request ,'Delivery with Delivery Code '.$request->input('parcel_delivery_code').' Has been Updated !');
 			}
 
 			return Redirect::to($return)->with('messagetext',\Lang::get('core.note_success'))->with('msgstatus','success');

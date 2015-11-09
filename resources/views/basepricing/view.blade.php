@@ -17,7 +17,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Pickup Location', (isset($fields['pickup_location']['language'])? $fields['pickup_location']['language'] : array())) }}	
 						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->pickup_location,'pickup_location','1:tb_cities:id:city_name') !!} </td>
+						<td>{{ $row->pickup_location }} </td>
 						
 					</tr>
 				
@@ -25,7 +25,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Dropoff Location', (isset($fields['dropoff_location']['language'])? $fields['dropoff_location']['language'] : array())) }}	
 						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->dropoff_location,'dropoff_location','1:tb_cities:id:city_name') !!} </td>
+						<td>{{ $row->dropoff_location }} </td>
 						
 					</tr>
 				

@@ -1482,6 +1482,51 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 			return '0';
 		endif;
 	}
+
+	public static function calc_delivery_fee($parcel_delivery_code){
+		//get the order
+		$order = DB::table('tb_request_delivery')
+			->where('parcel_delivery_code',$parcel_delivery_code)->first();
+
+		//from and to variables carry the zone id
+		//query the database for the pricing between zones
+		$base_price = DB::table('tb_zone_pricing_base')
+			->where('pickup_location',$order->parcel_pickup_zone)
+			->where('dropoff_location',$order->parcel_dropoff_zone)->value('base_price');
+		if(empty($base_price)){
+			$base_price = DB::table('tb_zone_pricing_base')
+				->where('pickup_location',$order->parcel_dropoff_zone)
+				->where('dropoff_location',$order->parcel_pickup_zone)->value('base_price');
+		}
+
+		//now we get the weight of the parcel
+		$percentage_increase_by_weight = DB::select('SELECT * FROM  tb_weight_pricing WHERE upper_limit >= ? AND lower_limit <= ?',[$order->parcel_weight,$order->parcel_weight]);
+		$percentage_increase_by_weight = $percentage_increase_by_weight[0]->percentage_increase_on_base_price;
+
+		if($percentage_increase_by_weight!=0) {
+			$percentage_of_base_from_weight = ($percentage_increase_by_weight / 100) * $base_price;
+			$new_price = $base_price + $percentage_of_base_from_weight;
+		}
+		else{
+			$new_price = $base_price;
+		}
+
+		//now we get the priority price based off the $new_price
+		$percentage_increase_by_priority = DB::table('tb_priority_pricing')
+			->where('id',$order->parcel_delivery_priority)->first();
+		$percentage_increase_by_priority = $percentage_increase_by_priority->percentage_increase_in_base_price_and_weight_premium;
+
+		if($percentage_increase_by_priority!=0){
+			$percentage_based_of_priority = ($percentage_increase_by_priority / 100) * $new_price;
+			$final_price = $percentage_based_of_priority + $new_price;
+		}
+		else{
+			$final_price = $new_price;
+		}
+
+		return $final_price;
+
+	}
 	 	 		
 			
 }

@@ -29,7 +29,16 @@
 									{!! SiteHelpers::activeLang('Pickup Location', (isset($fields['pickup_location']['language'])? $fields['pickup_location']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  <select name='pickup_location' rows='5' id='pickup_location' class='select2 '   ></select> 
+									  
+					<?php $pickup_location = explode(',',$row['pickup_location']);
+					$pickup_location_opt = $zones; ?>
+					<select name='pickup_location' rows='5'   class='select2 '  > 
+						<?php 
+						foreach($pickup_location_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['pickup_location'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -40,7 +49,16 @@
 									{!! SiteHelpers::activeLang('Dropoff Location', (isset($fields['dropoff_location']['language'])? $fields['dropoff_location']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
-									  <select name='dropoff_location' rows='5' id='dropoff_location' class='select2 '   ></select> 
+									  
+					<?php $dropoff_location = explode(',',$row['dropoff_location']);
+					$dropoff_location_opt = $zones; ?>
+					<select name='dropoff_location' rows='5'   class='select2 '  > 
+						<?php 
+						foreach($dropoff_location_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['dropoff_location'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> 
 									 </div> 
 									 <div class="col-md-2">
 									 	
@@ -84,13 +102,7 @@
 			 
 <script type="text/javascript">
 $(document).ready(function() { 
-	
-		$("#pickup_location").jCombo("{{ URL::to('basepricing/comboselect?filter=tb_cities:id:city_name|city_zone') }}",
-		{  selected_value : '{{ $row["pickup_location"] }}' });
-		
-		$("#dropoff_location").jCombo("{{ URL::to('basepricing/comboselect?filter=tb_cities:id:city_name|city_zone') }}",
-		{  selected_value : '{{ $row["dropoff_location"] }}' });
-		 
+	 
 	
 	$('.editor').summernote();
 	$('.previewImage').fancybox();	

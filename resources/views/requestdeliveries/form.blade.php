@@ -42,7 +42,7 @@
 									 	
 									 </div>
 								  </div> 					
-								  <div class="form-group  " > 
+								  <div class="form-group hidethis " style="display:none;"> 
 									<label for="Customer" class=" control-label col-md-4 text-left"> 
 									{!! SiteHelpers::activeLang('Customer', (isset($fields['cid']['language'])? $fields['cid']['language'] : array())) !!}	
 									</label>
@@ -206,10 +206,10 @@
 	$(document).ready(function() { 
 		
 		
-		$("#parcel_pickup_zone").jCombo("{{ URL::to('requestdeliveries/comboselect?filter=tb_cities:id:city_name') }}",
+		$("#parcel_pickup_zone").jCombo("{{ URL::to('requestdeliveries/comboselect?filter=tb_cities:city_code:city_name') }}",
 		{  selected_value : '{{ $row["parcel_pickup_zone"] }}' });
 		
-		$("#parcel_dropoff_zone").jCombo("{{ URL::to('requestdeliveries/comboselect?filter=tb_cities:id:city_name') }}",
+		$("#parcel_dropoff_zone").jCombo("{{ URL::to('requestdeliveries/comboselect?filter=tb_cities:city_code:city_name') }}",
 		{  selected_value : '{{ $row["parcel_dropoff_zone"] }}' });
 		
 		$("#parcel_delivery_priority").jCombo("{{ URL::to('requestdeliveries/comboselect?filter=tb_priority_pricing:id:service_type') }}",

@@ -41,14 +41,6 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Customer', (isset($fields['cid']['language'])? $fields['cid']['language'] : array())) }}	
-						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->cid,'cid','1:tb_customers:id:first_name|last_name|company') !!} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Parcel Type', (isset($fields['parcel_type']['language'])? $fields['parcel_type']['language'] : array())) }}	
 						</td>
 						<td>{{ $row->parcel_type }} </td>
@@ -83,7 +75,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Parcel Pickup Zone', (isset($fields['parcel_pickup_zone']['language'])? $fields['parcel_pickup_zone']['language'] : array())) }}	
 						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->parcel_pickup_zone,'parcel_pickup_zone','1:tb_cities:id:city_name|city_zone') !!} </td>
+						<td>{{ $row->parcel_pickup_zone }} </td>
 						
 					</tr>
 				
@@ -99,7 +91,7 @@
 						<td width='30%' class='label-view text-right'>
 							{{ SiteHelpers::activeLang('Parcel Dropoff Zone', (isset($fields['parcel_dropoff_zone']['language'])? $fields['parcel_dropoff_zone']['language'] : array())) }}	
 						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->parcel_dropoff_zone,'parcel_dropoff_zone','1:tb_cities:id:city_name|city_zone') !!} </td>
+						<td>{{ $row->parcel_dropoff_zone }} </td>
 						
 					</tr>
 				
