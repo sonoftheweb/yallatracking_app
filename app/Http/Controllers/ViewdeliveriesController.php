@@ -1,24 +1,24 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Controllers\controller;
-use App\Models\Requestdeliveries;
+use App\Models\Viewdeliveries;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Validator, Input, Redirect ; 
 
 
-class RequestdeliveriesController extends Controller {
+class ViewdeliveriesController extends Controller {
 
 	protected $layout = "layouts.main";
 	protected $data = array();	
-	public $module = 'requestdeliveries';
+	public $module = 'viewdeliveries';
 	static $per_page	= '10';
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->beforeFilter('csrf', array('on'=>'post'));
-		$this->model = new Requestdeliveries();
+		$this->model = new Viewdeliveries();
 		
 		$this->info = $this->model->makeInfo( $this->module);
 		$this->access = $this->model->validAccess($this->info['id']);
@@ -26,7 +26,7 @@ class RequestdeliveriesController extends Controller {
 		$this->data = array(
 			'pageTitle'	=> 	$this->info['title'],
 			'pageNote'	=>  $this->info['note'],
-			'pageModule'=> 'requestdeliveries',
+			'pageModule'=> 'viewdeliveries',
 			'return'	=> self::returnUrl()
 			
 		);
@@ -62,7 +62,7 @@ class RequestdeliveriesController extends Controller {
 		// Build pagination setting
 		$page = $page >= 1 && filter_var($page, FILTER_VALIDATE_INT) !== false ? $page : 1;	
 		$pagination = new Paginator($results['rows'], $results['total'], $params['limit']);	
-		$pagination->setPath('requestdeliveries');
+		$pagination->setPath('viewdeliveries');
 		
 		$this->data['rowData']		= $results['rows'];
 		// Build Pagination 
@@ -82,7 +82,7 @@ class RequestdeliveriesController extends Controller {
 		// Master detail link if any 
 		$this->data['subgrid']	= (isset($this->info['config']['subgrid']) ? $this->info['config']['subgrid'] : array()); 
 		// Render into template
-		return view('requestdeliveries.index',$this->data);
+		return view('viewdeliveries.index',$this->data);
 	}	
 
 
@@ -113,7 +113,7 @@ class RequestdeliveriesController extends Controller {
 
 		
 		$this->data['id'] = $id;
-		return view('requestdeliveries.form',$this->data);
+		return view('viewdeliveries.form',$this->data);
 	}	
 
 	public function getShow( $id = null)
@@ -134,7 +134,7 @@ class RequestdeliveriesController extends Controller {
 		
 		$this->data['id'] = $id;
 		$this->data['access']		= $this->access;
-		return view('requestdeliveries.view',$this->data);	
+		return view('viewdeliveries.view',$this->data);	
 	}	
 
 	function postSave( Request $request)
@@ -143,30 +143,33 @@ class RequestdeliveriesController extends Controller {
 		$rules = $this->validateForm();
 		$validator = Validator::make($request->all(), $rules);	
 		if ($validator->passes()) {
-			$data = $this->validatePost('tb_requestdeliveries');
+			$data = $this->validatePost('tb_viewdeliveries');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
+			$parcel_delivery_code = $request->input('parcel_delivery_code');
+			$bill = \SiteHelpers::calc_delivery_fee($parcel_delivery_code);
+			$this->model->enterBill($id,$bill,$request->input('cid'),'initial');
 			
 			if(!is_null($request->input('apply')))
 			{
-				$return = 'requestdeliveries/update/'.$id.'?return='.self::returnUrl();
+				$return = 'viewdeliveries/update/'.$id.'?return='.self::returnUrl();
 			} else {
-				$return = 'requestdeliveries?return='.self::returnUrl();
+				$return = 'viewdeliveries?return='.self::returnUrl();
 			}
 
 			// Insert logs into database
 			if($request->input('id') =='')
 			{
-				\SiteHelpers::auditTrail( $request , 'New Delivery with Delivery Code '.$request->input('parcel_delivery_code').' Has been Added !');
+				\SiteHelpers::auditTrail( $request , 'New Data with ID '.$id.' Has been Inserted !');
 			} else {
-				\SiteHelpers::auditTrail($request ,'Delivery with Delivery Code '.$request->input('parcel_delivery_code').' Has been Updated !');
+				\SiteHelpers::auditTrail($request ,'Data with ID '.$id.' Has been Updated !');
 			}
 
 			return Redirect::to($return)->with('messagetext',\Lang::get('core.note_success'))->with('msgstatus','success');
 			
 		} else {
 
-			return Redirect::to('requestdeliveries/update/'.$id)->with('messagetext',\Lang::get('core.note_error'))->with('msgstatus','error')
+			return Redirect::to('viewdeliveries/update/'.$id)->with('messagetext',\Lang::get('core.note_error'))->with('msgstatus','error')
 			->withErrors($validator)->withInput();
 		}	
 	
@@ -181,15 +184,16 @@ class RequestdeliveriesController extends Controller {
 		// delete multipe rows 
 		if(count($request->input('id')) >=1)
 		{
-			$this->model->destroy($request->input('id'));
+            $this->model->removeBillOnDelete($request->input('id'));
+            $this->model->destroy($request->input('id'));
 			
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successfull");
 			// redirect
-			return Redirect::to('requestdeliveries')
+			return Redirect::to('viewdeliveries')
         		->with('messagetext', \Lang::get('core.note_success_delete'))->with('msgstatus','success'); 
 	
 		} else {
-			return Redirect::to('requestdeliveries')
+			return Redirect::to('viewdeliveries')
         		->with('messagetext','No Item Deleted')->with('msgstatus','error');				
 		}
 

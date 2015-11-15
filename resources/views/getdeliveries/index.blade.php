@@ -31,7 +31,7 @@
 	    <div class="toolbar-line ">
 	   	 	<div class="col-md-6">
 				@if($access['is_add'] ==1)
-		   		<a href="{{ URL::to('requestdeliveries/update') }}" class="tips btn btn-sm btn-white"  title="{{ Lang::get('core.btn_create') }}">
+		   		<a href="{{ URL::to('getdeliveries/update') }}" class="tips btn btn-sm btn-white"  title="{{ Lang::get('core.btn_create') }}">
 				<i class="fa fa-plus-circle "></i>&nbsp;{{ Lang::get('core.btn_create') }}</a>
 				@endif  
 				@if($access['is_remove'] ==1)
@@ -39,7 +39,7 @@
 				<i class="fa fa-minus-circle "></i>&nbsp;{{ Lang::get('core.btn_remove') }}</a>
 				@endif 		
 				@if($access['is_excel'] ==1)
-				<a href="{{ URL::to('requestdeliveries/download') }}" class="tips btn btn-sm btn-white" title="{{ Lang::get('core.btn_download') }}">
+				<a href="{{ URL::to('getdeliveries/download') }}" class="tips btn btn-sm btn-white" title="{{ Lang::get('core.btn_download') }}">
 				<i class="fa fa-download"></i>&nbsp;{{ Lang::get('core.btn_download') }} </a>
 				@endif	
 
@@ -61,7 +61,7 @@
 
 	
 	
-	 {!! Form::open(array('url'=>'requestdeliveries/delete/', 'class'=>'form-horizontal' ,'id' =>'SximoTable' )) !!}
+	 {!! Form::open(array('url'=>'getdeliveries/delete/', 'class'=>'form-horizontal' ,'id' =>'SximoTable' )) !!}
 	 <div class="table-responsive" style="min-height:300px;">
     <table class="table table-striped ">
         <thead>
@@ -74,7 +74,6 @@
 						<th>{{ SiteHelpers::activeLang($t['label'],(isset($t['language'])? $t['language'] : array())) }}</th>
 					@endif
 				@endforeach
-				<th width="70" >Bill</th>
 				<th width="70" >{{ Lang::get('core.btn_action') }}</th>
 			  </tr>
         </thead>
@@ -90,7 +89,6 @@
 					</td>
 					@endif
 				@endforeach
-				<td></td>
 				<td >
 				<input type="hidden"  value="Search">
 				<button type="button"  class=" do-quick-search btn btn-xs btn-info"> GO</button></td>
@@ -98,11 +96,17 @@
 						
             @foreach ($rowData as $row)
                 <tr>
-					<td width="30"> {{ ++$i }} </td>
-					<td width="50"><input type="checkbox" class="ids" name="id[]" value="{{ $row->id }}" />  </td>									
+					<td width="30" style="background-color:{{SiteHelpers::status_data($row->id)->color_code}} !important;"> {{ ++$i }} </td>
+					<td width="50"  style="background-color:{{SiteHelpers::status_data($row->id)->color_code}} !important;">
+						@if(SiteHelpers::if_can_delete($row->id))
+							<input type="checkbox" class="ids" name="id[]" value="{{ $row->id }}" />
+						@else
+							<small>Processing started</small>
+						@endif
+					</td>
 				 @foreach ($tableGrid as $field)
 					 @if($field['view'] =='1')
-					 <td>					 
+					 <td  style="background-color:{{SiteHelpers::status_data($row->id)->color_code}} !important;">
 					 	@if($field['attribute']['image']['active'] =='1')
 							{!! SiteHelpers::showUploadedFile($row->$field['field'],$field['attribute']['image']['path']) !!}
 						@else	
@@ -112,18 +116,13 @@
 					 </td>
 					 @endif					 
 				 @endforeach
-				<td>
-					<strong>&#8358;{!! SiteHelpers::calc_delivery_fee($row->parcel_delivery_code) !!}</strong>
-				</td>
-				 <td>
+				 <td  style="background-color:{{SiteHelpers::status_data($row->id)->color_code}} !important;">
 					 	@if($access['is_detail'] ==1)
-						<a href="{{ URL::to('requestdeliveries/show/'.$row->id.'?return='.$return)}}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
+						<a href="{{ URL::to('getdeliveries/show/'.$row->id.'?return='.$return)}}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
 						@endif
 						@if($access['is_edit'] ==1)
-						<a  href="{{ URL::to('requestdeliveries/update/'.$row->id.'?return='.$return) }}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_edit') }}"><i class="fa fa-edit "></i></a>
+						<a  href="{{ URL::to('getdeliveries/update/'.$row->id.'?return='.$return) }}" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_edit') }}"><i class="fa fa-edit "></i></a>
 						@endif
-												
-					
 				</td>				 
                 </tr>
 				
@@ -144,7 +143,7 @@
 $(document).ready(function(){
 
 	$('.do-quick-search').click(function(){
-		$('#SximoTable').attr('action','{{ URL::to("requestdeliveries/multisearch")}}');
+		$('#SximoTable').attr('action','{{ URL::to("getdeliveries/multisearch")}}');
 		$('#SximoTable').submit();
 	});
 	

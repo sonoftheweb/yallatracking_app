@@ -13,5 +13,6 @@
                     Route::controller('basepricing', 'BasepricingController');
                     Route::controller('weightbasedpricing', 'WeightbasedpricingController');
                     Route::controller('prioritypricing', 'PrioritypricingController');
-                    Route::controller('requestdeliveries', 'RequestdeliveriesController');
+                    Route::controller('viewdeliveries', 'ViewdeliveriesController');
+                    Route::controller('getdeliveries', 'GetdeliveriesController');
                     ?>

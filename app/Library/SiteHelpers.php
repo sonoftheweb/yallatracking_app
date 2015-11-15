@@ -1483,11 +1483,16 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 		endif;
 	}
 
+    public static function delivery_code(){
+        $str = strtoupper(str_random(3));
+        return $str.time().SiteHelpers::getCustomerIdFromUserId();
+    }
+
 	public static function calc_delivery_fee($parcel_delivery_code){
 		//get the order
 		$order = DB::table('tb_request_delivery')
 			->where('parcel_delivery_code',$parcel_delivery_code)->first();
-
+        //dd($order);
 		//from and to variables carry the zone id
 		//query the database for the pricing between zones
 		$base_price = DB::table('tb_zone_pricing_base')
@@ -1520,13 +1525,34 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 			$percentage_based_of_priority = ($percentage_increase_by_priority / 100) * $new_price;
 			$final_price = $percentage_based_of_priority + $new_price;
 		}
-		else{
+		else {
 			$final_price = $new_price;
 		}
-
 		return $final_price;
 
 	}
-	 	 		
-			
+
+    public static function if_can_delete($delivery_id){
+        $delivery = DB::table('tb_request_delivery')
+            ->where('id',$delivery_id)
+            ->first();
+        $timediff = strtotime('now') - strtotime($delivery->prefered_date_of_delivery);
+        if($timediff < 1800):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+
+    public static function status_data($delivery_id){
+        $delivery = DB::table('tb_request_delivery')
+            ->where('id',$delivery_id)
+            ->first();
+
+        $delivery_status_detail = DB::table('tb_status')
+            ->where('sid',$delivery->status)
+            ->first();
+
+        return $delivery_status_detail;
+    }
 }

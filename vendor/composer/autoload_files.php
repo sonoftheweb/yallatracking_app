@@ -19,4 +19,5 @@ return array(
     $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
     $vendorDir . '/mews/captcha/src/helpers.php',
     $vendorDir . '/laravelcollective/html/src/helpers.php',
+    $vendorDir . '/barryvdh/laravel-debugbar/src/helpers.php',
 );
