@@ -1467,11 +1467,17 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 
 	}
 
-	public static function getCustomerIdFromUserId(){
-		$uid = Session::get('uid');
+	public static function getCustomerIdFromUserId($uid=''){
+		if(empty($uid))
+            $uid = Session::get('uid');
 		$cid = DB::table('tb_customers')->where('user_id', $uid)->pluck('id');
 		return $cid;
 	}
+
+    public static function getUserIdFromCustomerId($cid){
+        $uid = DB::table('tb_customers')->where('id', $cid)->pluck('user_id');
+        return $uid;
+    }
 
 	public static function is_payg_customer(){
 		$uid = Session::get('uid');
@@ -1483,9 +1489,9 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 		endif;
 	}
 
-    public static function delivery_code(){
+    public static function delivery_code($uid=''){
         $str = strtoupper(str_random(3));
-        return $str.time().SiteHelpers::getCustomerIdFromUserId();
+        return $str.time().SiteHelpers::getCustomerIdFromUserId($uid);
     }
 
 	public static function calc_delivery_fee($parcel_delivery_code){
@@ -1554,5 +1560,24 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
             ->first();
 
         return $delivery_status_detail;
+    }
+
+    //for use in billing
+    public static function billing_account_types($cid,$bill){
+        $uid = SiteHelpers::getUserIdFromCustomerId($cid);
+        $account_type = DB::table('tb_customers')->where('id',$cid)->pluck('account_type');
+        if($account_type == 4) {
+            //subtract costs of delivery from payg account
+            $paygbalance = DB::table('tb_payg_balance')
+                ->where('user_id',$uid)->pluck('balance');
+            $newpaygbalance = $paygbalance - $bill;
+            DB::table('tb_payg_balance')
+                ->where('user_id',$uid)
+                ->update(['balance' => $newpaygbalance]);
+        }elseif($account_type == 3){
+
+        }else{
+            return '0';
+        }
     }
 }

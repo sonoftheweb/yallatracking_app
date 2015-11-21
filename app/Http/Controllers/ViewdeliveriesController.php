@@ -111,14 +111,18 @@ class ViewdeliveriesController extends Controller {
 		}
 		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 
-		
+        /*if(!isset($this->data['row']['parcel_delivery_code'])){
+            $this->data['row']['parcel_delivery_code'] = \SiteHelpers::delivery_code();
+        }
+
+        dd($this->data['row']['parcel_delivery_code']);*/
+
 		$this->data['id'] = $id;
 		return view('viewdeliveries.form',$this->data);
 	}	
 
 	public function getShow( $id = null)
 	{
-	
 		if($this->access['is_detail'] ==0) 
 			return Redirect::to('dashboard')
 				->with('messagetext', Lang::get('core.note_restric'))->with('msgstatus','error');
@@ -146,9 +150,19 @@ class ViewdeliveriesController extends Controller {
 			$data = $this->validatePost('tb_viewdeliveries');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			$parcel_delivery_code = $request->input('parcel_delivery_code');
-			$bill = \SiteHelpers::calc_delivery_fee($parcel_delivery_code);
-			$this->model->enterBill($id,$bill,$request->input('cid'),'initial');
+            //update the delivery code using userid
+            $this->model->dc_addition($id);
+			if($request->input('id')=='') {
+				$bill = \SiteHelpers::calc_delivery_fee($request->input('parcel_delivery_code'));
+				//dd($bill);
+				$this->model->add_bill($id, $bill, $request->input('cid'), 'initial');
+				\SiteHelpers::billing_account_types($request->input('cid'),$bill);
+			}
+
+			//if the delivery is returned
+			if($request->input('status')=='4'){
+				$this->model->add_returned_bill($request->input('id'));
+			}
 			
 			if(!is_null($request->input('apply')))
 			{
@@ -184,8 +198,8 @@ class ViewdeliveriesController extends Controller {
 		// delete multipe rows 
 		if(count($request->input('id')) >=1)
 		{
-            $this->model->removeBillOnDelete($request->input('id'));
-            $this->model->destroy($request->input('id'));
+			$this->model->delete_action($request->input('id'));
+			$this->model->destroy($request->input('id'));
 			
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successfull");
 			// redirect

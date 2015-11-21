@@ -146,8 +146,12 @@ class GetdeliveriesController extends Controller {
 			$data = $this->validatePost('tb_getdeliveries');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			$bill = \SiteHelpers::calc_delivery_fee($request->input('parcel_delivery_code'));
-            $this->model->add_bill($id,$bill,$request->input('cid'),'initial');
+			if($request->input('id')=='') {
+                $bill = \SiteHelpers::calc_delivery_fee($request->input('parcel_delivery_code'));
+				//dd($bill);
+                $this->model->add_bill($id, $bill, $request->input('cid'), 'initial');
+                \SiteHelpers::billing_account_types($request->input('cid'),$bill);
+            }
 			
 			if(!is_null($request->input('apply')))
 			{
@@ -188,10 +192,12 @@ class GetdeliveriesController extends Controller {
             }
         }*/
 
+		/*dd($request->input('id'));*/
+
 		if(count($request->input('id')) >=1)
 		{
+            $this->model->delete_action($request->input('id'));
 			$this->model->destroy($request->input('id'));
-            $this->model->remove_bills($request->input('id'));
 			
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successfull");
 			// redirect

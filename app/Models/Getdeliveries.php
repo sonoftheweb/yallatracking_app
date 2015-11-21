@@ -44,6 +44,26 @@ class getdeliveries extends Sximo  {
 			->where('delivery_id',$delivery_request_id)
 			->delete();
 	}
+
+	public static function delete_action($ids){
+		foreach ($ids as $id) {
+			//get the customer ID and User ID
+			$delivery_object = DB::table('tb_request_delivery')->where('id',$id)->first();
+			$customer_id = $delivery_object->cid;
+			$user_id = \SiteHelpers::getUserIdFromCustomerId($customer_id);
+			$bill = DB::table('tb_bills')->where('delivery_id',$id)->get();
+            if(count($bill) == 1){
+				$bill_amount = $bill[0]->bill;
+				//refund now
+				if(\SiteHelpers::is_payg_customer()){
+					DB::table('tb_payg_balance')->where('user_id', $user_id)->increment('balance', $bill_amount);
+                    //remove the bill
+                    self::remove_bills($id);
+				}
+			}
+		}
+
+	}
 	
 
 }

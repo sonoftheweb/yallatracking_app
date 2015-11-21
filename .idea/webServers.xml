@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="95f31176-bcc5-493e-9215-f492361d6878" name="YallaT" url="http://52.26.61.30">
+        <fileTransfer host="52.26.61.30" port="22" privateKey="$USER_HOME$/Desktop/Yalla_AWS/YallaExpressSSH.pem" rootFolder="/var/www/html" accessType="SFTP" username="ubuntu" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

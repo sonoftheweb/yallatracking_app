@@ -2,6 +2,7 @@
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class viewdeliveries extends Sximo  {
 	
@@ -27,36 +28,63 @@ class viewdeliveries extends Sximo  {
 		return "  ";
 	}
 
-	public static function enterBill($delivery_id,$bill,$customer_id,$bill_type){
-		//check if the delivery_id and bill_type exists
-		//if it does run update else run insert
+	public static function add_returned_bill($delivery_id){
+		//get the last bill
+        $last_delivery_bill = DB::table('tb_bills')
+        ->where('delivery_id',$delivery_id)
+        ->orderBy('bill_id','desc')
+        ->first();
 
-		$check_if = \DB::table('tb_bills')
-			->where('delivery_id',$delivery_id)
-			->where('bill_type',$bill_type);
-
-		if(empty($check_if)){
-			\DB::table('tb_bills')->insert([
-				'customer_id'=>$customer_id,
-				'bill'=>$bill,
-				'delivery_id'=>$delivery_id,
-				'bill_type'=>$bill_type
-			]);
-		}
-		else{
-			\DB::table('tb_bills')
-				->where('customer_id',$customer_id)
-				->where('delivery_id',$delivery_id)
-				->where('delivery_id',$bill_type)
-				->update(['bill'=>$bill]);
-		}
-		return;
+        //now divide it into two
+        $return_bill = $last_delivery_bill->bill / 2;
+        DB::table('tb_bills')
+            ->insert(
+                ['customer_id' => $last_delivery_bill->customer_id, 'delivery_id' => $delivery_id, 'bill' => $return_bill, 'bill_type' => 'return']
+            );
 	}
 
-	public static function removeBillOnDelete($delivery_id){
-		\DB::table('tb_bills')->where('delivery_id',$delivery_id)->delete();
-		return;
+	public static function remove_bills($delivery_request_id){
+		DB::table('tb_bills')
+			->where('delivery_id',$delivery_request_id)
+			->delete();
 	}
-	
+
+	public static function delete_action($ids){
+		foreach ($ids as $id) {
+			//get the customer ID and User ID
+			$delivery_object = DB::table('tb_request_delivery')->where('id',$id)->first();
+			$customer_id = $delivery_object->cid;
+			$user_id = \SiteHelpers::getUserIdFromCustomerId($customer_id);
+			$bill = DB::table('tb_bills')->where('delivery_id',$id)->get();
+			if(count($bill) == 1){
+				$bill_amount = $bill[0]->bill;
+				//refund now
+				if(\SiteHelpers::is_payg_customer()){
+					DB::table('tb_payg_balance')->where('user_id', $user_id)->increment('balance', $bill_amount);
+					//remove the bill
+					self::remove_bills($id);
+				}
+			}
+		}
+
+	}
+
+	public static function add_bill($delivery_request_id,$bill,$customer_id,$bill_type){
+		DB::table('tb_bills')->insert([
+			[
+				'customer_id' => $customer_id,
+				'bill' => $bill,
+				'delivery_id' => $delivery_request_id,
+				'bill_type' => $bill_type
+			]
+		]);
+	}
+
+	public static function dc_addition($id){
+		//get the delivery object
+		$delivery_object = DB::table('tb_request_delivery')->where('id',$id)->first();
+		$user_id = \SiteHelpers::getUserIdFromCustomerId($delivery_object->cid);
+		return \SiteHelpers::delivery_code($user_id);
+	}
 
 }
