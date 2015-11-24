@@ -28,7 +28,7 @@ class viewdeliveries extends Sximo  {
 		return "  ";
 	}
 
-	public static function add_returned_bill($delivery_id){
+	public static function add_returned_bill($delivery_id,$output=false){
 		//get the last bill
         $last_delivery_bill = DB::table('tb_bills')
         ->where('delivery_id',$delivery_id)
@@ -41,6 +41,8 @@ class viewdeliveries extends Sximo  {
             ->insert(
                 ['customer_id' => $last_delivery_bill->customer_id, 'delivery_id' => $delivery_id, 'bill' => $return_bill, 'bill_type' => 'return']
             );
+		if($output)
+			return $return_bill;
 	}
 
 	public static function remove_bills($delivery_request_id){
@@ -56,10 +58,10 @@ class viewdeliveries extends Sximo  {
 			$customer_id = $delivery_object->cid;
 			$user_id = \SiteHelpers::getUserIdFromCustomerId($customer_id);
 			$bill = DB::table('tb_bills')->where('delivery_id',$id)->get();
-			if(count($bill) == 1){
+			if(count($bill) == 1 && $delivery_object->status == 1){
 				$bill_amount = $bill[0]->bill;
 				//refund now
-				if(\SiteHelpers::is_payg_customer()){
+				if(\SiteHelpers::is_payg_customer($user_id)){
 					DB::table('tb_payg_balance')->where('user_id', $user_id)->increment('balance', $bill_amount);
 					//remove the bill
 					self::remove_bills($id);
@@ -84,7 +86,14 @@ class viewdeliveries extends Sximo  {
 		//get the delivery object
 		$delivery_object = DB::table('tb_request_delivery')->where('id',$id)->first();
 		$user_id = \SiteHelpers::getUserIdFromCustomerId($delivery_object->cid);
-		return \SiteHelpers::delivery_code($user_id);
+        DB::table('tb_request_delivery')
+            ->where('id',$id)
+            ->update(['parcel_delivery_code' => \SiteHelpers::delivery_code($user_id)]);
 	}
+
+    public static function get_parcel_delivery_code($id){
+        $delivery_object = DB::table('tb_request_delivery')->where('id',$id)->first();
+        return $delivery_object->parcel_delivery_code;
+    }
 
 }

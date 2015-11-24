@@ -27,39 +27,24 @@
 	</div>
 	<div class="sbox-content"> 	
 	    <div class="toolbar-line ">
-	   	 	<div class="col-md-6">
-				<?php if($access['is_add'] ==1): ?>
-		   		<a href="<?php echo e(URL::to('ycustomers/update')); ?>" class="tips btn btn-sm btn-white"  title="<?php echo e(Lang::get('core.btn_create')); ?>">
-				<i class="fa fa-plus-circle "></i>&nbsp;<?php echo e(Lang::get('core.btn_create')); ?></a>
-				<?php endif; ?>  
-				<?php if($access['is_remove'] ==1): ?>
-				<a href="javascript://ajax"  onclick="SximoDelete();" class="tips btn btn-sm btn-white" title="<?php echo e(Lang::get('core.btn_remove')); ?>">
-				<i class="fa fa-minus-circle "></i>&nbsp;<?php echo e(Lang::get('core.btn_remove')); ?></a>
-				<?php endif; ?> 		
-				<?php if($access['is_excel'] ==1): ?>
-				<a href="<?php echo e(URL::to('ycustomers/download')); ?>" class="tips btn btn-sm btn-white" title="<?php echo e(Lang::get('core.btn_download')); ?>">
-				<i class="fa fa-download"></i>&nbsp;<?php echo e(Lang::get('core.btn_download')); ?> </a>
-				<?php endif; ?>	
-
-			</div>
-
-			<div class="col-md-6 "> 
-				<?php if($access['is_excel'] ==1): ?>
-				<div class="pull-right">
-					<a href="<?php echo e(URL::to( $pageModule .'/export/excel?return='.$return)); ?>" class="btn btn-sm btn-white"> Excel</a>
-					<a href="<?php echo e(URL::to( $pageModule .'/export/word?return='.$return)); ?>" class="btn btn-sm btn-white"> Word </a>
-					<a href="<?php echo e(URL::to( $pageModule .'/export/csv?return='.$return)); ?>" class="btn btn-sm btn-white"> CSV </a>
-					<a href="<?php echo e(URL::to( $pageModule .'/export/print?return='.$return)); ?>" class="btn btn-sm btn-white" onclick="ajaxPopupStatic(this.href); return false;" > Print</a>
-				</div>	
-				<?php endif; ?>
-			</div>	
-			<div class="clr clear"></div>				
+			<?php if($access['is_add'] ==1): ?>
+	   		<a href="<?php echo e(URL::to('restapi/update')); ?>" class="tips btn btn-sm btn-white"  title="<?php echo e(Lang::get('core.btn_create')); ?>">
+			<i class="fa fa-plus-circle "></i>&nbsp;<?php echo e(Lang::get('core.btn_create')); ?></a>
+			<?php endif; ?>  
+			<?php if($access['is_remove'] ==1): ?>
+			<a href="javascript://ajax"  onclick="SximoDelete();" class="tips btn btn-sm btn-white" title="<?php echo e(Lang::get('core.btn_remove')); ?>">
+			<i class="fa fa-minus-circle "></i>&nbsp;<?php echo e(Lang::get('core.btn_remove')); ?></a>
+			<?php endif; ?> 		
+			<?php if($access['is_excel'] ==1): ?>
+			<a href="<?php echo e(URL::to('restapi/download')); ?>" class="tips btn btn-sm btn-white" title="<?php echo e(Lang::get('core.btn_download')); ?>">
+			<i class="fa fa-download"></i>&nbsp;<?php echo e(Lang::get('core.btn_download')); ?> </a>
+			<?php endif; ?>			
 		 
 		</div> 		
 
 	
 	
-	 <?php echo Form::open(array('url'=>'ycustomers/delete/', 'class'=>'form-horizontal' ,'id' =>'SximoTable' )); ?>
+	 <?php echo Form::open(array('url'=>'restapi/delete/', 'class'=>'form-horizontal' ,'id' =>'SximoTable' )); ?>
 
 	 <div class="table-responsive" style="min-height:300px;">
     <table class="table table-striped ">
@@ -70,7 +55,7 @@
 				
 				<?php foreach($tableGrid as $t): ?>
 					<?php if($t['view'] =='1'): ?>
-						<th><?php echo e(SiteHelpers::activeLang($t['label'],(isset($t['language'])? $t['language'] : array()))); ?></th>
+						<th><?php echo e($t['label']); ?></th>
 					<?php endif; ?>
 				<?php endforeach; ?>
 				<th width="70" ><?php echo e(Lang::get('core.btn_action')); ?></th>
@@ -112,10 +97,10 @@
 				 <?php endforeach; ?>
 				 <td>
 					 	<?php if($access['is_detail'] ==1): ?>
-						<a href="<?php echo e(URL::to('ycustomers/show/'.$row->id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_view')); ?>"><i class="fa  fa-search "></i></a>
+						<a href="<?php echo e(URL::to('restapi/show/'.$row->id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_view')); ?>"><i class="fa  fa-search "></i></a>
 						<?php endif; ?>
 						<?php if($access['is_edit'] ==1): ?>
-						<a  href="<?php echo e(URL::to('ycustomers/update/'.$row->id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_edit')); ?>"><i class="fa fa-edit "></i></a>
+						<a  href="<?php echo e(URL::to('restapi/update/'.$row->id.'?return='.$return)); ?>" class="tips btn btn-xs btn-white" title="<?php echo e(Lang::get('core.btn_edit')); ?>"><i class="fa fa-edit "></i></a>
 						<?php endif; ?>
 												
 					
@@ -140,7 +125,7 @@
 $(document).ready(function(){
 
 	$('.do-quick-search').click(function(){
-		$('#SximoTable').attr('action','<?php echo e(URL::to("ycustomers/multisearch")); ?>');
+		$('#SximoTable').attr('action','<?php echo e(URL::to("restapi/multisearch")); ?>');
 		$('#SximoTable').submit();
 	});
 	

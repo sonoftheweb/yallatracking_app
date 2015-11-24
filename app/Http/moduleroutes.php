@@ -15,4 +15,5 @@
                     Route::controller('prioritypricing', 'PrioritypricingController');
                     Route::controller('viewdeliveries', 'ViewdeliveriesController');
                     Route::controller('getdeliveries', 'GetdeliveriesController');
+                    Route::controller('restapi', 'RestapiController');
                     ?>

@@ -1479,15 +1479,82 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
         return $uid;
     }
 
-	public static function is_payg_customer(){
-		$uid = Session::get('uid');
-		$account_type = DB::table('tb_customers')->where('user_id',$uid)->pluck('account_type');
-		if($account_type == 4):
-			return '1';
-		else:
-			return '0';
-		endif;
+	public static function is_payg_customer($uid=''){
+		if(empty($uid))
+			$uid = Session::get('uid');
+		$ac = DB::table('tb_customers')->where('user_id',$uid)->first();
+        if(!empty($ac)){
+            if($ac->account_type == 4) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
 	}
+
+	public static function get_user_account_type_daily_delivery_limit($uid=''){
+        if(empty($uid))
+            $uid = Session::get('uid');
+        $user_account_details = DB::table('tb_customers')
+            ->join('tb_account_types', 'tb_customers.account_type', '=', 'tb_account_types.id')
+            ->select('tb_account_types.*', 'tb_customers.id as cid', 'tb_customers.user_id')
+            ->where('user_id',$uid)
+            ->first();
+        if($user_account_details->accout_sceduled_pickups_daily != 0)
+            return $user_account_details->accout_sceduled_pickups_daily;
+	}
+
+    public static function check_daily_limit($uid='',$date=''){
+        if(empty($uid))
+            $uid = Session::get('uid');
+        if(empty($date))
+            $date = date('Y-m-d');
+        $cd = DB::table('tb_customers')
+            ->join('tb_account_types', 'tb_customers.account_type', '=', 'tb_account_types.id')
+            ->select('tb_customers.id as cid','tb_customers.account_type','tb_account_types.*')
+            ->where('user_id',$uid)
+            ->first();
+
+        $del_count = DB::table('tb_daily_limit')
+            ->where('cid',$cd->cid)
+            ->where('date',$date)
+            ->get();
+
+        if($cd->accout_sceduled_pickups_daily > count($del_count)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public static function set_deliver_count_for_limit($cid,$delivery_id,$date='',$is_returned=''){
+        if(empty($is_returned))
+            $is_returned = '0';
+
+        //check that the delivery ID does not exist at all
+        $check_delivery = DB::table('tb_daily_limit')
+            ->where('delivery_id',$delivery_id)
+            ->where('is_returned',$is_returned)
+            ->get();
+        if(empty($check_delivery)){
+            //now we add the item
+            DB::table('tb_daily_limit')
+                ->insert(
+                    ['date' => $date, 'cid' => $cid, 'delivery_id' => $delivery_id, 'is_returned' => $is_returned]
+                );
+        }
+    }
+
+    public static function refund_limit_action($delivery_id){
+        DB::table('tb_daily_limit')
+            ->where('delivery_id',$delivery_id)
+            ->delete();
+    }
 
     public static function delivery_code($uid=''){
         $str = strtoupper(str_random(3));
@@ -1574,10 +1641,19 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
             DB::table('tb_payg_balance')
                 ->where('user_id',$uid)
                 ->update(['balance' => $newpaygbalance]);
-        }elseif($account_type == 3){
-
-        }else{
-            return '0';
         }
     }
+
+	public static function check_cut_off_time($priority){
+        $current_hour = date('H');
+		$priority_time = DB::table('tb_priority_pricing')->where('id',$priority)->first();
+		$priority_time = explode(':',$priority_time->cutoff_time);
+
+		if($current_hour >= 9 && $priority_time[0] >= $current_hour){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }

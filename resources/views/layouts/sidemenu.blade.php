@@ -28,7 +28,7 @@
                 <div class="photo-header "> {!! SiteHelpers::avatar( 40 ) !!} </div>
             </li>
             @foreach ($sidebar as $menu)
-                @if((SiteHelpers::is_payg_customer() == '1') && ($menu['module']=='companybranches'))
+                @if((SiteHelpers::is_payg_customer()) && ($menu['module']=='companybranches'))
                     <?php continue 1; ?>
                 @endif
                 <li @if(Request::segment(1) == $menu['module']) class="active" @endif>

@@ -29,6 +29,14 @@
 						
 					</tr>
 				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Cutoff Time', (isset($fields['cutoff_time']['language'])? $fields['cutoff_time']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->cutoff_time }} </td>
+						
+					</tr>
+				
 			</tbody>	
 		</table>  
 			

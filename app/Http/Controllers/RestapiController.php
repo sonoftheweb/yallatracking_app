@@ -1,24 +1,24 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Controllers\controller;
-use App\Models\Getdeliveries;
+use App\Models\Restapi;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Validator, Input, Redirect ; 
 
 
-class GetdeliveriesController extends Controller {
+class RestapiController extends Controller {
 
 	protected $layout = "layouts.main";
 	protected $data = array();	
-	public $module = 'getdeliveries';
+	public $module = 'restapi';
 	static $per_page	= '10';
 
 	public function __construct()
 	{
-		parent::__construct();
+		
 		$this->beforeFilter('csrf', array('on'=>'post'));
-		$this->model = new Getdeliveries();
+		$this->model = new Restapi();
 		
 		$this->info = $this->model->makeInfo( $this->module);
 		$this->access = $this->model->validAccess($this->info['id']);
@@ -26,7 +26,7 @@ class GetdeliveriesController extends Controller {
 		$this->data = array(
 			'pageTitle'	=> 	$this->info['title'],
 			'pageNote'	=>  $this->info['note'],
-			'pageModule'=> 'getdeliveries',
+			'pageModule'=> 'restapi',
 			'return'	=> self::returnUrl()
 			
 		);
@@ -62,7 +62,7 @@ class GetdeliveriesController extends Controller {
 		// Build pagination setting
 		$page = $page >= 1 && filter_var($page, FILTER_VALIDATE_INT) !== false ? $page : 1;	
 		$pagination = new Paginator($results['rows'], $results['total'], $params['limit']);	
-		$pagination->setPath('getdeliveries');
+		$pagination->setPath('restapi');
 		
 		$this->data['rowData']		= $results['rows'];
 		// Build Pagination 
@@ -82,7 +82,7 @@ class GetdeliveriesController extends Controller {
 		// Master detail link if any 
 		$this->data['subgrid']	= (isset($this->info['config']['subgrid']) ? $this->info['config']['subgrid'] : array()); 
 		// Render into template
-		return view('getdeliveries.index',$this->data);
+		return view('restapi.index',$this->data);
 	}	
 
 
@@ -107,13 +107,12 @@ class GetdeliveriesController extends Controller {
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_request_delivery'); 
+			$this->data['row'] = $this->model->getColumnTable('tb_restapi'); 
 		}
-		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 
 		
 		$this->data['id'] = $id;
-		return view('getdeliveries.form',$this->data);
+		return view('restapi.form',$this->data);
 	}	
 
 	public function getShow( $id = null)
@@ -128,13 +127,12 @@ class GetdeliveriesController extends Controller {
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_request_delivery'); 
+			$this->data['row'] = $this->model->getColumnTable('tb_restapi'); 
 		}
-		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 		
 		$this->data['id'] = $id;
 		$this->data['access']		= $this->access;
-		return view('getdeliveries.view',$this->data);	
+		return view('restapi.view',$this->data);	
 	}	
 
 	function postSave( Request $request)
@@ -143,43 +141,21 @@ class GetdeliveriesController extends Controller {
 		$rules = $this->validateForm();
 		$validator = Validator::make($request->all(), $rules);	
 		if ($validator->passes()) {
-			$data = $this->validatePost('tb_getdeliveries');
-
-			//for PAYG customers ensure that their limit has not been reached for the selected date
-			if(\SiteHelpers::is_payg_customer(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'))) && (!\SiteHelpers::check_daily_limit(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'),$request->input('prefered_date_of_delivery')))))
-				return Redirect::to('getdeliveries?return='.self::returnUrl())
-					->with('messagetext','This user has exceeded his/her daily limit for '.$request->input('prefered_date_of_delivery'))
-					->with('msgstatus','error')
-					->withErrors($validator)->withInput();
-
-			//ensure the delivery is made at the right time
-			if(!\SiteHelpers::check_cut_off_time($request->input('parcel_delivery_priority'))){
-				return Redirect::to('getdeliveries?return='.self::returnUrl())
-					->with('messagetext','You cannot make delivery requests at this time')
-					->with('msgstatus','error')
-					->withErrors($validator)->withInput();
-			}
-
-			//add delivery
+			$data = $this->validatePost('tb_restapi');
+			if($request->input('id') ==''){
+				$x = \SiteHelpers::encryptID(rand(10000,10000000));
+				$x .= "-".\SiteHelpers::encryptID(rand(10000,10000000));
+				$data['apikey'] = $x;
+				$data['created'] = date("Y-m-d");
+			}	
+			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			if($request->input('id')=='') {
-                if(\SiteHelpers::is_payg_customer(\SiteHelpers::getUserIdFromCustomerId($request->input('cid')))) {
-                    $bill = \SiteHelpers::calc_delivery_fee($request->input('parcel_delivery_code'));
-                    //dd($bill);
-                    $this->model->add_bill($id, $bill, $request->input('cid'), 'initial');
-                    \SiteHelpers::billing_account_types($request->input('cid'), $bill);
-                }
-                else{
-                    //set the limit table
-                    \SiteHelpers::set_deliver_count_for_limit($request->input('cid'),$id,$request->input('prefered_date_of_delivery'));
-                }
-            }
 			
 			if(!is_null($request->input('apply')))
 			{
-				$return = 'getdeliveries/update/'.$id.'?return='.self::returnUrl();
+				$return = 'restapi/update/'.$id.'?return='.self::returnUrl();
 			} else {
-				$return = 'getdeliveries?return='.self::returnUrl();
+				$return = 'restapi?return='.self::returnUrl();
 			}
 
 			// Insert logs into database
@@ -194,7 +170,7 @@ class GetdeliveriesController extends Controller {
 			
 		} else {
 
-			return Redirect::to('getdeliveries/update/'.$id)->with('messagetext',\Lang::get('core.note_error'))->with('msgstatus','error')
+			return Redirect::to('restapi/update/'.$id)->with('messagetext',\Lang::get('core.note_error'))->with('msgstatus','error')
 			->withErrors($validator)->withInput();
 		}	
 	
@@ -206,28 +182,18 @@ class GetdeliveriesController extends Controller {
 		if($this->access['is_remove'] ==0) 
 			return Redirect::to('dashboard')
 				->with('messagetext', \Lang::get('core.note_restric'))->with('msgstatus','error');
-		// delete multipe rows
-        /*//remove all the ids that cannot be deleted
-        foreach($request->input('id') as $key=>$del_id){
-            if(!$this->model->if_can_delete($del_id)){
-                unset($request->input('id')[$key]);
-            }
-        }*/
-
-		/*dd($request->input('id'));*/
-
+		// delete multipe rows 
 		if(count($request->input('id')) >=1)
 		{
-            $this->model->delete_action($request->input('id'));
 			$this->model->destroy($request->input('id'));
 			
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successfull");
 			// redirect
-			return Redirect::to('getdeliveries')
+			return Redirect::to('restapi')
         		->with('messagetext', \Lang::get('core.note_success_delete'))->with('msgstatus','success'); 
 	
 		} else {
-			return Redirect::to('getdeliveries')
+			return Redirect::to('restapi')
         		->with('messagetext','No Item Deleted')->with('msgstatus','error');				
 		}
 

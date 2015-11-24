@@ -29,7 +29,7 @@
                 <div class="photo-header "> <?php echo SiteHelpers::avatar( 40 ); ?> </div>
             </li>
             <?php foreach($sidebar as $menu): ?>
-                <?php if((SiteHelpers::is_payg_customer() == '1') && ($menu['module']=='companybranches')): ?>
+                <?php if((SiteHelpers::is_payg_customer()) && ($menu['module']=='companybranches')): ?>
                     <?php continue 1; ?>
                 <?php endif; ?>
                 <li <?php if(Request::segment(1) == $menu['module']): ?> class="active" <?php endif; ?>>

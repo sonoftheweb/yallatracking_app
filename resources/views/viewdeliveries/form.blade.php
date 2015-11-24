@@ -160,9 +160,9 @@
 									
 								  <div class="form-group  " >
 									<label for="ipt" class=" control-label ">
-										{!! SiteHelpers::activeLang('Status', (isset($fields['status']['language'])? $fields['status']['language'] : array())) !!}		
+										{!! SiteHelpers::activeLang('Status *', (isset($fields['status']['language'])? $fields['status']['language'] : array())) !!}
 									   </label>									
-									  <select name='status' rows='5' id='status' class='select2 '   ></select> 						
+									  <select name='status' rows='5' id='status' class='select2 ' required  ></select>
 								  </div> 					
 								  <div class="form-group  " >
 									<label for="ipt" class=" control-label ">

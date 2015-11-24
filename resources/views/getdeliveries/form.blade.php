@@ -84,7 +84,7 @@
 								  </div> 					
 								  <div class="form-group  " >
 									<label for="ipt" class=" control-label ">
-										{!! SiteHelpers::activeLang('Prefered Date / Time Of Delivery', (isset($fields['prefered_date_of_delivery']['language'])? $fields['prefered_date_of_delivery']['language'] : array())) !!}
+										{!! SiteHelpers::activeLang('Prefered Date Of Delivery', (isset($fields['prefered_date_of_delivery']['language'])? $fields['prefered_date_of_delivery']['language'] : array())) !!}
 										<span class="asterix"> * </span>
 									</label>
 									  
