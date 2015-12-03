@@ -32,9 +32,7 @@ class SximoapiController extends Controller {
 			$param			= array('page'=> $page , 'sort'=>'', 'order'=>'asc','limit'=>''  );
 			if(!is_null($request->input('limit')) or $request->input('limit') != 0 ) $param['limit'] = $request->input('limit');
 			if(!is_null($request->input('order'))) $param['order'] = $request->input('order');
-			if(!is_null($request->input('sort'))) $param['sort'] = $request->input('sort');	
-			
-						
+			if(!is_null($request->input('sort'))) $param['sort'] = $request->input('sort');
 				
 			$results 		= 	$this->model->getRows( $param ); 
 
@@ -169,7 +167,7 @@ class SximoapiController extends Controller {
 		if(is_null($request->input('module'))) 
 				return array(array('status'=>'error','message'=>' Please Define Module Name to accessed '),400);		
 					
-			if(!isset($_SERVER['PHP_AUTH_USER']) && !isset($_SERVER['PHP_AUTH_PW']))
+			/*if(!isset($_SERVER['PHP_AUTH_USER']) && !isset($_SERVER['PHP_AUTH_PW']))
 			{
 		        return array([
 		            'error' => true,
@@ -207,7 +205,6 @@ class SximoapiController extends Controller {
 					} 		
 				
 				}
-			}			
-	}				
-
+			}*/
+	}
 }

@@ -27,7 +27,7 @@ Route::get('/restric',function(){
 
 });
 
-Route::resource('sximoapi', 'SximoapiController'); 
+Route::resource('sximoapi', 'SximoapiController');
 Route::group(['middleware' => 'auth'], function()
 {
 
@@ -58,7 +58,6 @@ Route::group(['middleware' => 'auth' , 'middleware'=>'sximoauth'], function()
 
 
 });
-
 
 
 

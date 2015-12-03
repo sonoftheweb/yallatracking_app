@@ -1644,16 +1644,32 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
         }
     }
 
-	public static function check_cut_off_time($priority){
-        $current_hour = date('H');
+	public static function check_cut_off_time($priority,$zone1,$zone2){
+        $current_time = str_replace(':','',date('H:i:s'));
 		$priority_time = DB::table('tb_priority_pricing')->where('id',$priority)->first();
-		$priority_time = explode(':',$priority_time->cutoff_time);
+		$priority_time_within_zones = str_replace(':','',$priority_time->cutoff_time);
+		$priority_time_outside_zones = str_replace(':','',$priority_time->cutoff_time_outside_zones);
 
-		if($current_hour >= 9 && $priority_time[0] >= $current_hour){
-			return true;
-		}
-		else{
-			return false;
-		}
+		//compare zones
+        $zone1 = str_split($zone1,3);
+        $zone2 = str_split($zone2,3);
+        if($zone1[0] == $zone2[0]){
+            if($current_time >= 80000 && $priority_time_within_zones > $current_time){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            if($current_time >= 80000 && $priority_time_outside_zones > $current_time){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+
 	}
 }

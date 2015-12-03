@@ -47,11 +47,22 @@
 									 </div>
 								  </div> 					
 								  <div class="form-group  " > 
-									<label for="Cutoff Time" class=" control-label col-md-4 text-left"> 
-									{!! SiteHelpers::activeLang('Cutoff Time', (isset($fields['cutoff_time']['language'])? $fields['cutoff_time']['language'] : array())) !!}	
+									<label for="Cutoff Time Within Zones" class=" control-label col-md-4 text-left"> 
+									{!! SiteHelpers::activeLang('Cutoff Time Within Zones', (isset($fields['cutoff_time']['language'])? $fields['cutoff_time']['language'] : array())) !!}	
 									</label>
 									<div class="col-md-6">
 									  {!! Form::text('cutoff_time', $row['cutoff_time'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
+									 </div> 
+									 <div class="col-md-2">
+									 	
+									 </div>
+								  </div> 					
+								  <div class="form-group  " > 
+									<label for="Cutoff Time Outside Zones" class=" control-label col-md-4 text-left"> 
+									{!! SiteHelpers::activeLang('Cutoff Time Outside Zones', (isset($fields['cutoff_time_outside_zones']['language'])? $fields['cutoff_time_outside_zones']['language'] : array())) !!}	
+									</label>
+									<div class="col-md-6">
+									  {!! Form::text('cutoff_time_outside_zones', $row['cutoff_time_outside_zones'],array('class'=>'form-control', 'placeholder'=>'',   )) !!} 
 									 </div> 
 									 <div class="col-md-2">
 									 	

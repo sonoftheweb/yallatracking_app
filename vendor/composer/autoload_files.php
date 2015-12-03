@@ -20,4 +20,5 @@ return array(
     $vendorDir . '/mews/captcha/src/helpers.php',
     $vendorDir . '/laravelcollective/html/src/helpers.php',
     $vendorDir . '/barryvdh/laravel-debugbar/src/helpers.php',
+    $vendorDir . '/dingo/api/src/helpers.php',
 );

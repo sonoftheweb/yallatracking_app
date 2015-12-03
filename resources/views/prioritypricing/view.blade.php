@@ -31,9 +31,17 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Cutoff Time', (isset($fields['cutoff_time']['language'])? $fields['cutoff_time']['language'] : array())) }}	
+							{{ SiteHelpers::activeLang('Cutoff Time Within Zones', (isset($fields['cutoff_time']['language'])? $fields['cutoff_time']['language'] : array())) }}	
 						</td>
 						<td>{{ $row->cutoff_time }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>
+							{{ SiteHelpers::activeLang('Cutoff Time Outside Zones', (isset($fields['cutoff_time_outside_zones']['language'])? $fields['cutoff_time_outside_zones']['language'] : array())) }}	
+						</td>
+						<td>{{ $row->cutoff_time_outside_zones }} </td>
 						
 					</tr>
 				

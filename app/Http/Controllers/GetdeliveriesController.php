@@ -145,15 +145,16 @@ class GetdeliveriesController extends Controller {
 		if ($validator->passes()) {
 			$data = $this->validatePost('tb_getdeliveries');
 
-			//for PAYG customers ensure that their limit has not been reached for the selected date
-			if(\SiteHelpers::is_payg_customer(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'))) && (!\SiteHelpers::check_daily_limit(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'),$request->input('prefered_date_of_delivery')))))
+			//for Platinum, Gold, Silver customers ensure that their limit has not been reached for the selected date
+			if(!\SiteHelpers::is_payg_customer(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'))) && (!\SiteHelpers::check_daily_limit(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'),$request->input('prefered_date_of_delivery')))))
 				return Redirect::to('getdeliveries?return='.self::returnUrl())
 					->with('messagetext','This user has exceeded his/her daily limit for '.$request->input('prefered_date_of_delivery'))
 					->with('msgstatus','error')
 					->withErrors($validator)->withInput();
 
 			//ensure the delivery is made at the right time
-			if(!\SiteHelpers::check_cut_off_time($request->input('parcel_delivery_priority'))){
+			//dd(\SiteHelpers::check_cut_off_time($request->input('parcel_delivery_priority')));
+			if(!\SiteHelpers::check_cut_off_time($request->input('parcel_delivery_priority'),$request->input('parcel_pickup_zone'),$request->input('parcel_dropoff_zone'))){
 				return Redirect::to('getdeliveries?return='.self::returnUrl())
 					->with('messagetext','You cannot make delivery requests at this time')
 					->with('msgstatus','error')

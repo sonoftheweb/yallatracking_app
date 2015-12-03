@@ -68,7 +68,8 @@
 									<label for="ipt" class=" control-label ">
 										<?php echo SiteHelpers::activeLang('Parcel Weight', (isset($fields['parcel_weight']['language'])? $fields['parcel_weight']['language'] : array())); ?>		
 									 <span class="asterix"> * </span>  </label>									
-									  <?php echo Form::text('parcel_weight', $row['parcel_weight'],array('class'=>'form-control', 'placeholder'=>'', 'required'=>'true'  )); ?> 						
+									  <?php echo Form::text('parcel_weight', $row['parcel_weight'],array('class'=>'form-control', 'id'=>'parcel_weight', 'placeholder'=>'', 'required'=>'true'  )); ?>
+
 								  </div> 					
 								  <div class="form-group  " >
 									<label for="ipt" class=" control-label ">
@@ -121,6 +122,12 @@
 									   </label>									
 									  <?php echo Form::text('pickup_location_landmarks', $row['pickup_location_landmarks'],array('class'=>'form-control', 'placeholder'=>'',   )); ?> 						
 								  </div> </fieldset>
+
+
+                <div id="pricing" style="font-size: 20px; font-weight: bold; color:#3a3a3a; text-align: center;"></div>
+                <div id=disc style="font-size: 11px; color:#3a3a3a; text-align: center; display:none;"><strong>Note:</strong> Please note that you are unable to make any changes to this requests after you submit. To cancel your request, please send a mail to <strong>admin@yallaexpress.com</strong> with the tracking number within.</div>
+
+
 			</div>
 			
 			<div class="col-md-4">
@@ -167,12 +174,11 @@
 					
 				  <div class="form-group">
 					<label class="col-sm-4 text-right">&nbsp;</label>
-					<div class="col-sm-8">	
+					<div class="col-sm-8">
 					<button type="submit" name="apply" class="btn btn-info btn-sm" ><i class="fa  fa-check-circle"></i> <?php echo e(Lang::get('core.sb_apply')); ?></button>
 					<button type="submit" name="submit" class="btn btn-primary btn-sm" ><i class="fa  fa-save "></i> <?php echo e(Lang::get('core.sb_save')); ?></button>
 					<button type="button" onclick="location.href='<?php echo e(URL::to('getdeliveries?return='.$return)); ?>' " class="btn btn-success btn-sm "><i class="fa  fa-arrow-circle-left "></i>  <?php echo e(Lang::get('core.sb_cancel')); ?> </button>
-					</div>	  
-			
+					</div>
 				  </div> 
 		 
 		 <?php echo Form::close(); ?>
@@ -180,7 +186,7 @@
 	</div>
 </div>		 
 </div>	
-</div>			 
+</div>
    <script type="text/javascript">
 	$(document).ready(function() { 
 		
@@ -200,7 +206,117 @@
 			$.get(removeUrl,function(response){});
 			$(this).parent('div').empty();	
 			return false;
-		});		
+		});
+
+        var $pickupZone = $('#parcel_pickup_zone');
+        var $dropoffZone = $('#parcel_dropoff_zone');
+        var $priority = $('#parcel_delivery_priority');
+        var $weight = $('#parcel_weight');
+
+        var $allFields = $('#parcel_pickup_zone,#parcel_dropoff_zone,#parcel_delivery_priority,#parcel_weight');
+
+        var $allZoneRows;
+        var $priority_price_increase_percentage;
+        var $base_price;
+        var $allWeightRows;
+        var $weight_price_increase_percentage;
+        var $allPriorityRows;
+
+
+		$.ajax({
+			dataType: "json",
+			url: '<?php echo url() ?>/sximoapi?module=basepricing',
+			headers: {"Authorization": "Basic " + btoa("info@yallaexpress.com:gWQ8CL-WxT4e-YHhnH2-3Y7TS")},
+			success: function (data) {
+				// Do return value here //
+				$allZoneRows = data.rows;
+			}
+
+		});
+
+        $.ajax({
+            dataType: "json",
+            url: '<?php echo url() ?>/sximoapi?module=weightbasedpricing',
+            headers: {"Authorization": "Basic " + btoa("info@yallaexpress.com:gWQ8CL-WxT4e-YHhnH2-3Y7TS")},
+            success: function (wdata) {
+                // Do return value here //
+                $allWeightRows = wdata.rows;
+            }
+
+        });
+
+        $.ajax({
+            dataType: "json",
+            url: '<?php echo url() ?>/sximoapi?module=prioritypricing',
+            headers: {"Authorization": "Basic " + btoa("info@yallaexpress.com:gWQ8CL-WxT4e-YHhnH2-3Y7TS")},
+            success: function (pdata) {
+                // Do return value here //
+                $allPriorityRows = pdata.rows;
+            }
+        });
+
+        $allFields.on('change',function(){
+
+            if($pickupZone.val() && $dropoffZone.val() && $priority.val()) {
+
+                $.each($allZoneRows, function (index, value) {
+                    if ($pickupZone.val() == value.pickup_location && $dropoffZone.val() == value.dropoff_location) {
+                        $base_price = value.base_price;
+                    }
+                    else if ($pickupZone.val() == value.dropoff_location && $dropoffZone.val() == value.pickup_location) {
+                        $base_price = value.base_price;
+                    }
+                });
+
+                $.each($allWeightRows, function (index, value){
+                    if(parseFloat($weight.val()).toFixed(1) >= value.lower_limit && parseFloat($weight.val()).toFixed(1) <= value.upper_limit){
+                        $weight_price_increase_percentage = value.percentage_increase_on_base_price;
+                    }
+                });
+
+                $.each($allPriorityRows, function (index,value){
+                    if($priority.val() == value.id){
+                        $priority_price_increase_percentage = value.percentage_increase_in_base_price_and_weight_premium;
+                    }
+                });
+
+                if($base_price != ''){
+                    var $piw = parseFloat(parseInt($weight_price_increase_percentage)/100).toFixed(2);
+                    var $pip = parseFloat(parseInt($priority_price_increase_percentage)/100).toFixed(2);
+
+                    var $increase_price_by_weight = parseFloat($piw * $base_price).toFixed(2);
+                    var $newPriceByWeight = parseFloat($increase_price_by_weight) + parseFloat($base_price);
+
+                    var $increase_price_by_priority = parseFloat($pip * $newPriceByWeight).toFixed(2);
+                    var $finalPrice = parseFloat($newPriceByWeight) + parseFloat($increase_price_by_priority);
+
+                    $('#pricing').html('Price: '+parseFloat($finalPrice).toFixed(2));
+                    $('#disc').css('display','inline-block');
+                }
+            }
+
+            /*alert($allZoneRows.toSource());*/
+        });
+
+
+
+
+        //get the locations code and base price
+
+
+        //get the weight and add percentage increase
+
+        //get the priority and add percentage increase
+
+        /*$.ajax({
+            dataType 	: "json",
+            url 		: '<?php echo url() ?>/sximoapi?module=employee',
+            headers		: {"Authorization": "Basic " +  btoa("superadmin@mail.com:pLihtt-I4jzL")},
+            success 	: function(data){
+                // Do return value here //
+
+            }
+        })*/
 		
 	});
 	</script>		 
