@@ -2,181 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb660154-d7cc-4bd1-8eeb-3513f7468c3d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/..csv/1450392095-48697673.webp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yallatracking.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/.php_cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/.styleci.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/.styleci.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/1450392762-27422008.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/1450428432-46194176.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/3b51691421ee097ddbae1fd71429c20f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/84cf02a779d692fce0f24e8415102b42" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/877ed0491930c5eca5a83ba559ff194f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Facade/API.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Parser/Accept.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Validation/Accept.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Action.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Routing/Adapter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Transformer/Adapter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Provider/ApiServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/ArraySerializer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attribute.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attributes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Auth/Auth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Middleware/Auth.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/RateLimit/Throttle/Authenticated.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Auth/Provider/Authorization.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Auth/Provider/Basic.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Transformer/Binding.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Blueprint.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/Bulkdelivery.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/BulkdeliveryController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Console/Command/Cache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/CachedReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/Collection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/Cursor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/CursorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/DataArraySerializer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Method/Delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/DeleteResourceFailedException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Dispatcher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocLexer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Console/Command/Docs.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Validation/Domain.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Enum.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Debug/ExceptionHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Response/Factory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Transformer/Factory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/FileCacheReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/FormRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Response/Format/Format.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Transformer/Adapter/Fractal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Method/Get.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/Handler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/RateLimit/Handler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/Helpers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/IgnoreAnnotation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/IlluminatePaginatorAdapter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/IndexedReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/InternalHttpException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/InternalRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/Item.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Auth/Provider/JWT.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Response/Format/Json.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/JsonApiSerializer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Response/Format/Jsonp.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/lexer/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/Adapter/Laravel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Provider/LaravelServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/Adapter/Lumen.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Provider/LumenServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Manager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Method/Method.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Auth/Provider/OAuth2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/PagerfantaPaginatorAdapter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/PaginatorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/ParamBag.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Parameter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Parameters.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Http/Parser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Method/Patch.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/PhpParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Method/Post.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Validation/Prefix.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Auth/Provider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Method/Put.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/lexer/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Middleware/RateLimit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Reader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Http/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Middleware/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/RequestValidator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Required.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Resource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Resource.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/ResourceAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/ResourceException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/ResourceInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/ResourceRegistrar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/Response.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Response.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Event/ResponseIsMorphing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Event/ResponseWasMorphed.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Facade/Route.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/RateLimit/Throttle/Route.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/Route.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/RouteCollection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/Router.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Console/Command/Routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Scope.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Section.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/SerializerAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/StoreResourceFailedException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Target.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Http/RateLimit/Throttle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/RateLimit/Throttle/Throttle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Transaction.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/TransformerAbstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Http/RateLimit/Throttle/Unauthenticated.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/UnknownVersionException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/UpdateResourceFailedException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Routing/UrlGenerator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Exception/ValidationHttpException.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/Contract/Http/Validator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Versions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Models/Viewbulkdeliveries.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ViewbulkdeliveriesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/src/Writer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/ZendFrameworkPaginatorAdapter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/acebbb246b4c75e2805c0ef8935f9649" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/api.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/config/api.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/bulk-delivery-template.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/doctrine/lexer/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/league/fractal/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/d9e94926dd7e242803a9f0b3602aa2dc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/dd7b1de7a967490502b7e194c6143748" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/def9f45799736672608c9823c642e99d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/df6a8ce21f70efd2bb4ad2ac8cfd78c6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/f320314cc33a8b626360bf350785fbca" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/framework/views/fb04040ed1b82bf4f15ac7504454c5d5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/bulkdelivery/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/viewbulkdeliveries/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/src/helpers.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/bulkdelivery/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/viewbulkdeliveries/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/api/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/dingo/blueprint/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tete/test.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/bulkdelivery/view.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/viewbulkdeliveries/view.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/05f4ab872997d9b2303a5f5da3c4d041" afterPath="$PROJECT_DIR$/storage/framework/views/05f4ab872997d9b2303a5f5da3c4d041" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/57a4d7d91e247a2c17b26dd8572ecf90" afterPath="$PROJECT_DIR$/storage/framework/views/57a4d7d91e247a2c17b26dd8572ecf90" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/63b70b193999c8c3bd339b30c74cf28f" afterPath="$PROJECT_DIR$/storage/framework/views/63b70b193999c8c3bd339b30c74cf28f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GetdeliveriesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GetdeliveriesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Sximo.php" afterPath="$PROJECT_DIR$/app/Models/Sximo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ViewdeliveriesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ViewdeliveriesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/moduleroutes.php" afterPath="$PROJECT_DIR$/app/Http/moduleroutes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sximoapi.php" afterPath="$PROJECT_DIR$/resources/views/sximoapi.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="yallatracking.iws" />
@@ -841,7 +666,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449154782311</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Bulk Delivery">
+      <created>1450432085862</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1450432085863</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
