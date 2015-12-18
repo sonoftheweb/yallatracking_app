@@ -1467,6 +1467,14 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 
 	}
 
+	public static function is_customer(){
+		if(\Session::get('gid') == 4) {
+            return true;
+        }else{
+            return false;
+        }
+	}
+
 	public static function getCustomerIdFromUserId($uid=''){
 		if(empty($uid))
             $uid = Session::get('uid');

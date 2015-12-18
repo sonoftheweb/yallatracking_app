@@ -28,7 +28,7 @@ class Sximo extends Model {
 		if($global == 0 )
 				$params .= " AND {$table}.entry_by ='".\Session::get('uid')."'";
 		// End Update permission global / own access new ver 1.1
-        
+
 		$rows = array();
 	    $result = \DB::select( self::querySelect() . self::queryWhere(). " 
 				{$params} ". self::queryGroup() ." {$orderConditional}  {$limitConditional} ");

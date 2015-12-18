@@ -45,7 +45,7 @@
 
                                 </div>
                             </div>
-                            <div class="form-group  ">
+                            <div class="form-group  " {!! $hidethis !!}>
                                 <label for="Username" class=" control-label col-md-4 text-left">
                                     {!! SiteHelpers::activeLang('Username', (isset($fields['username']['language'])? $fields['username']['language'] : array())) !!}
                                 </label>
@@ -59,7 +59,7 @@
                             </div>
 
 
-                            <div class="form-group  ">
+                            <div class="form-group  "{!! $hidethis !!}>
                                 <label for="Username" class=" control-label col-md-4 text-left">
                                     {!! SiteHelpers::activeLang('Customer Group', (isset($fields['username']['language'])? $fields['username']['language'] : array())) !!}
                                 </label>
@@ -79,7 +79,7 @@
                             </div>
 
 
-                            <div class="form-group  ">
+                            <div class="form-group  "{!! $hidethis !!}>
                                 <label for="Account Type" class=" control-label col-md-4 text-left">
                                     {!! SiteHelpers::activeLang('Account Package', (isset($fields['account_type']['language'])? $fields['account_type']['language'] : array())) !!}
                                 </label>
@@ -92,7 +92,7 @@
 
                                 </div>
                             </div>
-                            <div class="form-group  ">
+                            <div class="form-group  " style="display: none;">
                                 <label for="Password" class=" control-label col-md-4 text-left">
                                     {!! SiteHelpers::activeLang('Password', (isset($fields['password']['language'])? $fields['password']['language'] : array())) !!}
                                 </label>

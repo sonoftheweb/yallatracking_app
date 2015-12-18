@@ -114,6 +114,13 @@ class YcustomersController extends Controller {
 		$this->data['fields'] =  \AjaxHelpers::fieldLang($this->info['config']['forms']);
 		$this->data['customer_groups'] = Customergroups::all()->toArray();
 
+		if(\SiteHelpers::is_customer()){
+			$this->data['hidethis'] = ' style="display:none;"';
+		}
+		else{
+			$this->data['hidethis'] = '';
+		}
+
 		$this->data['id'] = $id;
 		return view('ycustomers.form',$this->data);
 	}

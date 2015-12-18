@@ -17,10 +17,12 @@
 	 
  	<div class="page-content-wrapper">   
 	   <div class="toolbar-line">
+		   @unless (SiteHelpers::is_customer())
 	   		<a href="{{ URL::to('ycustomers?return='.$return) }}" class="tips btn btn-xs btn-default" title="{{ Lang::get('core.btn_back') }}"><i class="fa fa-arrow-circle-left"></i>&nbsp;{{ Lang::get('core.btn_back') }}</a>
-			@if($access['is_add'] ==1)
+		   @endunless
+			{{--@if($access['is_add'] ==1)--}}
 	   		<a href="{{ URL::to('ycustomers/update/'.$id.'?return='.$return) }}" class="tips btn btn-xs btn-primary" title="{{ Lang::get('core.btn_edit') }}"><i class="fa fa-edit"></i>&nbsp;{{ Lang::get('core.btn_edit') }}</a>
-			@endif  		   	  
+			{{--@endif--}}
 		</div>
 <div class="sbox animated fadeInRight">
 	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
@@ -142,38 +144,42 @@
 						<td>{{ $row->company }} </td>
 						
 					</tr>
+
+					@unless(SiteHelpers::is_customer())
+						<tr>
+							<td width='30%' class='label-view text-right'>
+								{{ SiteHelpers::activeLang('Created At', (isset($fields['created_at']['language'])? $fields['created_at']['language'] : array())) }}
+							</td>
+							<td>{{ $row->created_at }} </td>
+
+						</tr>
+
+						<tr>
+							<td width='30%' class='label-view text-right'>
+								{{ SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())) }}
+							</td>
+							<td>{{ $row->updated_at }} </td>
+
+						</tr>
+
+
+						<tr>
+							<td width='30%' class='label-view text-right'>
+								{{ SiteHelpers::activeLang('UID', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())) }}
+							</td>
+							<td>{{ $row->user_id }} </td>
+
+						</tr>
 				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Created At', (isset($fields['created_at']['language'])? $fields['created_at']['language'] : array())) }}	
-						</td>
-						<td>{{ $row->created_at }} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())) }}	
-						</td>
-						<td>{{ $row->updated_at }} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('UID', (isset($fields['user_id']['language'])? $fields['user_id']['language'] : array())) }}	
-						</td>
-						<td>{{ $row->user_id }} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>
-							{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}	
-						</td>
-						<td>{!! SiteHelpers::gridDisplayView($row->entry_by,'entry_by','1:tb_users:id:first_name|last_name') !!} </td>
-						
-					</tr>
+
+						<tr>
+							<td width='30%' class='label-view text-right'>
+								{{ SiteHelpers::activeLang('Entry By', (isset($fields['entry_by']['language'])? $fields['entry_by']['language'] : array())) }}
+							</td>
+							<td>{!! SiteHelpers::gridDisplayView($row->entry_by,'entry_by','1:tb_users:id:first_name|last_name') !!} </td>
+
+						</tr>
+					@endunless
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>
