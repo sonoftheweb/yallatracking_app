@@ -16,4 +16,6 @@
                     Route::controller('viewdeliveries', 'ViewdeliveriesController');
                     Route::controller('getdeliveries', 'GetdeliveriesController');
                     Route::controller('restapi', 'RestapiController');
+                    Route::controller('bulkdelivery', 'BulkdeliveryController');
+                    Route::controller('viewbulkdeliveries', 'ViewbulkdeliveriesController');
                     ?>

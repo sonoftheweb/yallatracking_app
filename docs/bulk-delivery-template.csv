@@ -1,0 +1,2 @@
+Parcel Type*,Parcel Contents*,Parcel Weight*,Parcel Delivery Priority*,Prefered Date Of Delivery,Parcel Pickup Address*,Parcel Pickup Zone,Pickup Location Landmarks,Parcel Dropoff Address*,Parcel Dropoff Zone,Dropoff Location Landmark,Dropoff Contact Name*,Dropoff Contact Phone / Email*
+Letters,Paper works,1.1kg,URGENT | PRIORITY | NORMAL,TODAY | YYYY/MM/DD,Where do we pick up the parcel?,Leave blank if unsure,Leave blank if unsure,Where do we drop off the parcel?,Leave blank if unsure,Leave blank if unsure,Name of person to deliver to,Phone or email of drop off contact

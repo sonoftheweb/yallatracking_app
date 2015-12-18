@@ -146,15 +146,15 @@ class ViewdeliveriesController extends Controller {
 		if ($validator->passes()) {
 			$data = $this->validatePost('tb_viewdeliveries');
 
-            //for PAYG customers ensure that their limit has not been reached for the selected date
-            if(\SiteHelpers::is_payg_customer(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'))) && (!\SiteHelpers::check_daily_limit(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'),$request->input('prefered_date_of_delivery')))))
+            //for Other customers ensure that their limit has not been reached for the selected date
+            if(!\SiteHelpers::is_payg_customer(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'))) && (\SiteHelpers::check_daily_limit(\SiteHelpers::getUserIdFromCustomerId($request->input('cid'),$request->input('prefered_date_of_delivery')))))
                 return Redirect::to('viewdeliveries?return='.self::returnUrl())
                     ->with('messagetext','This user has exceeded his/her daily limit for '.$request->input('prefered_date_of_delivery'))
                     ->with('msgstatus','error')
                     ->withErrors($validator)->withInput();
 
             //ensure the delivery is made at the right time
-            if(!\SiteHelpers::check_cut_off_time($request->input('parcel_delivery_priority'))){
+            if(!\SiteHelpers::check_cut_off_time($request->input('parcel_delivery_priority'),$request->input('parcel_pickup_zone'),$request->input('parcel_dropoff_zone'))){
                 return Redirect::to('viewdeliveries?return='.self::returnUrl())
                     ->with('messagetext','You cannot make delivery requests at this time')
                     ->with('msgstatus','error')
@@ -183,9 +183,9 @@ class ViewdeliveriesController extends Controller {
                     $this->model->add_returned_bill($request->input('id'));
                     \SiteHelpers::billing_account_types($request->input('cid'),$this->model->add_returned_bill($request->input('id'),true));
                 }
-                else{
+                /*else{
                     \SiteHelpers::set_deliver_count_for_limit($request->input('cid'),$id,$request->input('prefered_date_of_delivery'),'1');
-                }
+                }*/
             }
 			
 			if(!is_null($request->input('apply')))
