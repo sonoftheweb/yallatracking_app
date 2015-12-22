@@ -63,9 +63,41 @@
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->		
+		<![endif]-->
 
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			function notify() {
+				//query the database for notifications
+				$.ajax({
+					dataType: "json",
+					url: '<?php echo url() ?>/sximoapi?module=notification',
+					headers: {"Authorization": "Basic " + btoa("info@yallaexpress.com:gWQ8CL-WxT4e-YHhnH2-3Y7TS")},
+					success: function (data) {
+						// Do return value here //
+						runNotif(data);
+					}
+				});
+			}
 
+			function runNotif(d){
+                var notifCount = 0;
+				var sess = '<?php echo Session::get('uid'); ?>';
+
+                $.each(d.rows, function (index, value) {
+                    if (value.userid == sess && value.is_read == 0) {
+                        notifCount = notifCount + 1;
+                    }
+                });
+
+                $('.notif-alert').html(notifCount);
+			}
+
+            window.setInterval(function(){
+                notify();
+            }, 5000);
+		});
+	</script>
 	
   	</head>
   	<body class="sxim-init" >
@@ -79,7 +111,7 @@
 
 		<div class="footer fixed">
 		    <div class="pull-right">
-		         Powered By  <strong><a href="http://sximobuilder.com" target="_blank">Sximo 5 Builder</a></strong> 
+		         {{--Powered By  <strong><a href="http://sximobuilder.com" target="_blank">Sximo 5 Builder</a></strong>--}}
 		    </div>
 		    <div>
 		        <strong>Copyright</strong> &copy; 2014-{{ date('Y')}} . {{ CNF_COMNAME }}  

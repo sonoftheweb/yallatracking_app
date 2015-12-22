@@ -175,6 +175,15 @@ class ZonesController extends Controller {
 			$data = $this->validatePost('tb_zones');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
+
+			$notif = array(
+				'url'   => url('/zones/show/'.$id),
+				'userid'    => '5',
+				'title'     => 'A zone record has been edited or added.',
+				'note'      => 'A zone has been edited or added. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			
 			return response()->json(array(
 				'status'=>'success',
@@ -207,6 +216,15 @@ class ZonesController extends Controller {
 		if(count($request->input('id')) >=1)
 		{
 			$this->model->destroy($request->input('id'));
+
+			$notif = array(
+				'url'   => url('/zones'),
+				'userid'    => '5',
+				'title'     => 'A zone record has been deleted.',
+				'note'      => 'A zone has been deleted. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			
 			return response()->json(array(
 				'status'=>'success',

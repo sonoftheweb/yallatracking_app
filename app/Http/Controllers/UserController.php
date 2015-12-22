@@ -107,6 +107,14 @@ class UserController extends Controller {
 		if (count($user) >=1)
 		{
 			\DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+			$notif = array(
+				'url'   => url('/core/users/'),
+				'userid'    => '5',
+				'title'     => 'A zone record has been edited or added.',
+				'note'      => 'A zone has been edited or added. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return Redirect::to('user/login')->with('message',\SiteHelpers::alert('success','Your account is active now!'));
 			
 		} else {
@@ -170,7 +178,7 @@ class UserController extends Controller {
 							\Session::put('lang', $request->input('language'));	
 						} else {
 							\Session::put('lang', 'en');	
-						}  
+						}
 							if(CNF_FRONT =='false') :
 							return Redirect::to('dashboard');						
 						else :
@@ -246,7 +254,15 @@ class UserController extends Controller {
 			$user->email 		= $request->input('email');
 			if(isset( $data['avatar']))  $user->avatar  = $newfilename; 			
 			$user->save();
+            \DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+            $notif = array(
+                'url'   => url('/core/users/'),
+                'userid'    => '5',
+                'title'     => 'A (New) Profile has been saved.',
+                'note'      => 'A (New) Profile has been saved. Please review this change as soon as possible.',
 
+            );
+            \SximoHelpers::storeNote($notif);
 			return Redirect::to('user/profile')->with('messagetext','Profile has been saved!')->with('msgstatus','success');
 		} else {
 			return Redirect::to('user/profile')->with('messagetext','The following errors occurred')->with('msgstatus','error')
@@ -266,6 +282,16 @@ class UserController extends Controller {
 			$user = User::find(\Session::get('uid'));
 			$user->password = \Hash::make($request->input('password'));
 			$user->save();
+
+            \DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+            $notif = array(
+                'url'   => url('/core/users/'),
+                'userid'    => '5',
+                'title'     => 'A user\'s password has been altered.',
+                'note'      => 'A user\'s password has been altered. Please review this change as soon as possible.',
+
+            );
+            \SximoHelpers::storeNote($notif);
 
 			return Redirect::to('user/profile')->with('message', \SiteHelpers::alert('success','Password has been saved!'));
 		} else {
@@ -308,7 +334,15 @@ class UserController extends Controller {
 				
 				$affectedRows = User::where('email', '=',$user->email)
 								->update(array('reminder' => $request->input('_token')));
-								
+                \DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+                $notif = array(
+                    'url'   => url('/core/users/'),
+                    'userid'    => '5',
+                    'title'     => 'Lost password request has been filed.',
+                    'note'      => 'A user has requested for a password reminder. Please review this change as soon as possible.',
+
+                );
+                \SximoHelpers::storeNote($notif);
 				return Redirect::to('user/login')->with('message', \SiteHelpers::alert('success','Please check your email'));	
 				
 			} else {
@@ -354,7 +388,15 @@ class UserController extends Controller {
 				$user->password = \Hash::make($request->input('password'));
 				$user->save();			
 			}
+            \DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+            $notif = array(
+                'url'   => url('/core/users/'),
+                'userid'    => '5',
+                'title'     => 'A user\'s password has just been reset.',
+                'note'      => 'A user\'s password has just been reset.',
 
+            );
+            \SximoHelpers::storeNote($notif);
 			return Redirect::to('user/login')->with('message',\SiteHelpers::alert('success','Password has been saved!'));
 		} else {
 			return Redirect::to('user/reset/'.$token)->with('message', \SiteHelpers::alert('error','The following errors occurred')

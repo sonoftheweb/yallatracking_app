@@ -53,6 +53,4 @@
 	  {!! $pagination->appends($pager)->render() !!}
 	  </div>
 	  </div>
-	</div>	
-	
-	
+	</div>

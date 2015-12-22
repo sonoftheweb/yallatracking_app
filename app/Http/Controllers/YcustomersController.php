@@ -115,7 +115,7 @@ class YcustomersController extends Controller {
 		$this->data['customer_groups'] = Customergroups::all()->toArray();
 
 		if(\SiteHelpers::is_customer()){
-			$this->data['hidethis'] = ' style="display:none;"';
+			$this->data['hidethis'] = '';
 		}
 		else{
 			$this->data['hidethis'] = '';
@@ -187,23 +187,20 @@ class YcustomersController extends Controller {
 				$id = $this->model->insertNewCustomer($data);
 
 				//check account type is PAYG and add the balance as 0
-				if($request->input('account_type')==4)
+				if($request->input('account_type') == 4)
 				{
-					DB::table('tb_payg_balance')->insert(
-						['user_id' => $userid, 'balance' => 0]
-					);
+                    $this->model->setPaygBalanceDefault($userid,'add');
 				}
 			}
 			else {
 				$data = $this->validatePost('tb_ycustomers');
 				$id = $this->model->insertRow($data, $request->input('id'));
+                $userid = $this->model->getUserFromCustomerID($id);
 
-				if($request->input('account_type') == '4'){
-					$userid = $this->model->getUserFromCustomerID($request->input('id'));
+				if($request->input('account_type') == 4){
 					$this->model->setPaygBalanceDefault($userid->id,'add');
 				}
 				else{
-					$userid = $this->model->getUserFromCustomerID($request->input('id'));
 					$this->model->setPaygBalanceDefault($userid->id,'delete');
 				}
 			}
@@ -222,6 +219,15 @@ class YcustomersController extends Controller {
 			} else {
 				\SiteHelpers::auditTrail($request ,'Data with ID '.$id.' Has been Updated !');
 			}
+
+			$notif = array(
+				'url'   => url('/ycustomers/show/'.$id),
+				'userid'    => '5',
+				'title'     => 'A customer record has been added or edited.',
+				'note'      => 'A customer has been added or edited. Please review this as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 
 			return Redirect::to($return)->with('messagetext',\Lang::get('core.note_success'))->with('msgstatus','success');
 
@@ -248,6 +254,15 @@ class YcustomersController extends Controller {
 			$authen->destroy($userdata->id);
 
 			$this->model->destroy($request->input('id'));
+
+			$notif = array(
+				'url'   => url('/ycustomers'),
+				'userid'    => '5',
+				'title'     => 'A customer record has been deleted.',
+				'note'      => 'A customer has been deleted. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successful");
 			// redirect

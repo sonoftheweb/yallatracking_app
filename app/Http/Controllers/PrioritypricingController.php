@@ -175,7 +175,15 @@ class PrioritypricingController extends Controller {
 			$data = $this->validatePost('tb_priority_pricing');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			
+			\DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+			$notif = array(
+				'url'   => url('/prioritypricing/show/'.$id),
+				'userid'    => '5',
+				'title'     => 'New or Editted Priority Pricing.',
+				'note'      => 'There has been some change in the priority pricing. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success')
@@ -207,7 +215,14 @@ class PrioritypricingController extends Controller {
 		if(count($request->input('id')) >=1)
 		{
 			$this->model->destroy($request->input('id'));
-			
+			$notif = array(
+				'url'   => url('/prioritypricing'),
+				'userid'    => '5',
+				'title'     => 'Priority Pricing Deleted.',
+				'note'      => 'A priority pricing entry has been deleted. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success_delete')

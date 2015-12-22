@@ -188,6 +188,25 @@ class ViewbulkdeliveriesController extends Controller {
 			$this->model->destroy($request->input('id'));
 			
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successfull");
+
+			$notif = array(
+				'url'   => url('/viewbulkdeliveries/show/'),
+				'userid'    => '5',
+				'title'     => 'Bulk Delivery Removal.',
+				'note'      => 'A bulk delivery has been removed. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
+
+			$notif = array(
+				'url'   => url('/viewbulkdeliveries/show/'),
+				'userid'    => '26',
+				'title'     => 'Bulk Delivery Removal.',
+				'note'      => 'A bulk delivery has been removed. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
+
 			// redirect
 			return Redirect::to('viewbulkdeliveries')
         		->with('messagetext', \Lang::get('core.note_success_delete'))->with('msgstatus','success'); 

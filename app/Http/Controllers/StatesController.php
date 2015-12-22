@@ -175,7 +175,17 @@ class StatesController extends Controller {
 			$data = $this->validatePost('tb_states');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			
+
+			\DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+			$notif = array(
+				'url'   => url('/states/show/'.$id),
+				'userid'    => '5',
+				'title'     => 'State record added or editted.',
+				'note'      => 'A state has just been added or editted. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
+
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success')
@@ -207,7 +217,15 @@ class StatesController extends Controller {
 		if(count($request->input('id')) >=1)
 		{
 			$this->model->destroy($request->input('id'));
-			
+			\DB::table('tb_users')->where('activation', $num )->update(array('active' => 1,'activation'=>''));
+			$notif = array(
+				'url'   => url('/states'),
+				'userid'    => '5',
+				'title'     => 'State record deleted.',
+				'note'      => 'A state has just been removed. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success_delete')

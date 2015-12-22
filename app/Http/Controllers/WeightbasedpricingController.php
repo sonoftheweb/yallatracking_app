@@ -175,7 +175,16 @@ class WeightbasedpricingController extends Controller {
 			$data = $this->validatePost('tb_weight_pricing');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			
+
+			$notif = array(
+				'url'   => url('/weightbasedpricing'),
+				'userid'    => '5',
+				'title'     => 'New changes made to weight based pricing.',
+				'note'      => 'Some new changes has been made in the weight based pricing. Please review this change.',
+
+			);
+			\SximoHelpers::storeNote($notif);
+
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success')
@@ -207,6 +216,15 @@ class WeightbasedpricingController extends Controller {
 		if(count($request->input('id')) >=1)
 		{
 			$this->model->destroy($request->input('id'));
+
+            $notif = array(
+                'url'   => url('/weightbasedpricing'),
+                'userid'    => '5',
+                'title'     => 'A record has been deleted.',
+                'note'      => 'A record has been deleted in the weight based pricing records. Please review this change as soon as possible.',
+
+            );
+            \SximoHelpers::storeNote($notif);
 			
 			return response()->json(array(
 				'status'=>'success',

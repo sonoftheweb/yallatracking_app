@@ -191,6 +191,16 @@ class GetdeliveriesController extends Controller {
 				\SiteHelpers::auditTrail($request ,'Data with ID '.$id.' Has been Updated !');
 			}
 
+			$notif = array(
+				'url'   => url('/viewdeliveries'),
+				'userid'    => '5',
+				'title'     => 'New Delivery Request',
+				'note'      => 'Hi Admin. A user just sent in a delivery request. Have a look.',
+
+			);
+
+			\SximoHelpers::storeNote($notif);
+
 			return Redirect::to($return)->with('messagetext',\Lang::get('core.note_success'))->with('msgstatus','success');
 			
 		} else {

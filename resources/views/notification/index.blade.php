@@ -33,7 +33,7 @@
 		 @foreach ($rowData as $row)
 		 	<li>
 		 		<input type="checkbox" class="ids" name="id[]" value="{{ $row->id }}" />
-		 			<i class="{!! $row->icon !!}"></i> <a href="">{!! $row->title !!} </a> <span class="pull-right text-muted small">{{ date("d/m/y",strtotime($row->created)) }} </span>
+		 			<i class="{!! $row->icon !!}"></i> <a href="{!! url('/notification/show/'.$row->id) !!}">{!! $row->title !!} </a> <span class="pull-right text-muted small">{{ date("d/m/y",strtotime($row->created)) }} </span>
 		 		<div> {!! $row->note !!}</div>	
 		 	</li>
 		@endforeach

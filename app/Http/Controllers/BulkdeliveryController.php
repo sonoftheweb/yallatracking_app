@@ -171,7 +171,23 @@ class BulkdeliveryController extends Controller {
 			} else {
 				\SiteHelpers::auditTrail($request ,'Data with ID '.$id.' Has been Updated !');
 			}
+			$notif = array(
+				'url'   => url('/viewbulkdeliveries/show/'.$id),
+				'userid'    => '5',
+				'title'     => 'New request in Bulk Delivery.',
+				'note'      => 'There has been a new bulk delivery request. Please review this change as soon as possible.',
 
+			);
+			\SximoHelpers::storeNote($notif);
+
+			$notif = array(
+				'url'   => url('/viewbulkdeliveries/show/'.$id),
+				'userid'    => '26',
+				'title'     => 'New request in Bulk Delivery.',
+				'note'      => 'There has been a new bulk delivery request. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return Redirect::to($return)->with('messagetext',\Lang::get('core.note_success'))->with('msgstatus','success');
 			
 		} else {

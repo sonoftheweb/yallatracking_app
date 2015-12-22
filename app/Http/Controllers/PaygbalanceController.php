@@ -175,7 +175,14 @@ class PaygbalanceController extends Controller {
 			$data = $this->validatePost('tb_payg_balance');
 			
 			$id = $this->model->insertRow($data , $request->input('id'));
-			
+			$notif = array(
+				'url'   => url('/paygbalance'),
+				'userid'    => '5',
+				'title'     => 'PAYG account balance change.',
+				'note'      => 'There has been some change in the PAYG account balance for a user. Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success')
@@ -207,7 +214,14 @@ class PaygbalanceController extends Controller {
 		if(count($request->input('id')) >=1)
 		{
 			$this->model->destroy($request->input('id'));
-			
+			$notif = array(
+				'url'   => url('/paygbalance'),
+				'userid'    => '5',
+				'title'     => 'PAYG balance has been removed.',
+				'note'      => 'Please review this change as soon as possible.',
+
+			);
+			\SximoHelpers::storeNote($notif);
 			return response()->json(array(
 				'status'=>'success',
 				'message'=> \Lang::get('core.note_success_delete')

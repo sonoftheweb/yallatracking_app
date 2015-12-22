@@ -28,7 +28,7 @@
 
 
 	
-	<table class="table table-striped table-bordered" >
+	{{--<table class="table table-striped table-bordered" >
 		<tbody>	
 	
 					<tr>
@@ -74,8 +74,13 @@
 					</tr>
 				
 		</tbody>	
-	</table>   
+	</table> --}}
 
+		<div class="">
+			<h2>{{ $row->title }}</h2>
+			<p>{{ $row->note }}</p>
+			<a href="{{ $row->url }}" class="tips btn btn-xs btn-primary">View</a>
+		</div>
 	 
 	
 	</div>
