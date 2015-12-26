@@ -1680,4 +1680,23 @@ public static function alphaID($in, $to_num = false, $pad_up = false, $passKey =
 
 
 	}
+
+	public static function get_delivery_price($did){
+		$cost = DB::table('tb_bills')
+			->where('delivery_id',$did)
+			->sum('bill');
+
+		if($cost!=0 && !empty($cost)){
+			return $cost;
+		}
+		else{
+			return '0';
+		}
+	}
+
+	public static function account_type_names_from_account_type_id($account_type_id){
+		return DB::table('tb_account_types')
+			->where('id',$account_type_id)
+			->value('account_type_name');
+	}
 }

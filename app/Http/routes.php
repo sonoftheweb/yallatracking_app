@@ -59,5 +59,8 @@ Route::group(['middleware' => 'auth' , 'middleware'=>'sximoauth'], function()
 
 });
 
+Route::post('reportgen', 'ReportgenController@getIndex');
+Route::get('/printreport', 'ReportgenController@printreport');
+
 
 

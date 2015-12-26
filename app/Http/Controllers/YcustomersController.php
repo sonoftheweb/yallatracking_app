@@ -115,7 +115,7 @@ class YcustomersController extends Controller {
 		$this->data['customer_groups'] = Customergroups::all()->toArray();
 
 		if(\SiteHelpers::is_customer()){
-			$this->data['hidethis'] = '';
+			$this->data['hidethis'] = ' takeout';
 		}
 		else{
 			$this->data['hidethis'] = '';
@@ -189,13 +189,13 @@ class YcustomersController extends Controller {
 				//check account type is PAYG and add the balance as 0
 				if($request->input('account_type') == 4)
 				{
-                    $this->model->setPaygBalanceDefault($userid,'add');
+					$this->model->setPaygBalanceDefault($userid,'add');
 				}
 			}
 			else {
 				$data = $this->validatePost('tb_ycustomers');
 				$id = $this->model->insertRow($data, $request->input('id'));
-                $userid = $this->model->getUserFromCustomerID($id);
+				$userid = $this->model->getUserFromCustomerID($id);
 
 				if($request->input('account_type') == 4){
 					$this->model->setPaygBalanceDefault($userid->id,'add');
@@ -233,7 +233,7 @@ class YcustomersController extends Controller {
 
 		} else {
 
-			return Redirect::to('ycustomers/update/'.$id)->with('messagetext',\Lang::get('core.note_error'))->with('msgstatus','error')
+			return Redirect::to('ycustomers/')->with('messagetext',\Lang::get('core.note_error'))->with('msgstatus','error')
 				->withErrors($validator)->withInput();
 		}
 
@@ -245,24 +245,30 @@ class YcustomersController extends Controller {
 		if($this->access['is_remove'] ==0)
 			return Redirect::to('dashboard')
 				->with('messagetext', \Lang::get('core.note_restric'))->with('msgstatus','error');
-		// delete multipe rows 
+		// delete multipe rows
 		if(count($request->input('id')) >=1)
 		{
-			//delete user object
-			$userdata = $this->model->getUserFromCustomerID($request->input('id'));
-			$authen = new User;
-			$authen->destroy($userdata->id);
+			foreach($request->input('id') as $cid) {
 
+				$userdata = $this->model->getUserFromCustomerID($cid);
+
+				//delete PAYG balance if available
+				$this->model->setPaygBalanceDefault($userdata->id,'delete');
+
+				//delete user object
+				$authen = new User;
+				$authen->destroy($userdata->id);
+
+				$notif = array(
+					'url' => url('/ycustomers'),
+					'userid' => '5',
+					'title' => 'A customer record has been deleted.',
+					'note' => 'A customer has been deleted. Please review this change as soon as possible.',
+
+				);
+				\SximoHelpers::storeNote($notif);
+			}
 			$this->model->destroy($request->input('id'));
-
-			$notif = array(
-				'url'   => url('/ycustomers'),
-				'userid'    => '5',
-				'title'     => 'A customer record has been deleted.',
-				'note'      => 'A customer has been deleted. Please review this change as soon as possible.',
-
-			);
-			\SximoHelpers::storeNote($notif);
 
 			\SiteHelpers::auditTrail( $request , "ID : ".implode(",",$request->input('id'))."  , Has Been Removed Successful");
 			// redirect
